@@ -8,7 +8,7 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Nike Store</title>
 </head>
@@ -17,16 +17,39 @@
     <nav id="nav">
         <div class="navTop">
             <div class="navItem">
-                <img src="./img/sneakers.png" alt="">
+                <!-- <img src="./img/sneakers.png" alt=""> -->
             </div>
-            <!-- <div class="navItem">
-                <div class="search">
-                    <input type="text" placeholder="Search..." class="searchInput">
-                    <img src="./img/search.png" width="20" height="20" alt="" class="searchIcon">
-                </div>
-            </div> -->
             <div class="navItem">
+                <i class="bi bi-person"></i>
 
+                <!-- Modal -->
+                <!-- Button trigger modal -->
+                <!-- <span class="" > -->
+                <i class="bi bi-cart" data-bs-toggle="modal" data-bs-target="#exampleModal" id="cart">
+                    <!-- </span> -->
+
+                    <!-- Modal -->
+                    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">Ton panier ()</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn w-100 modalBtn text-white">Ajoute des
+                                        produits</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                </i>
             </div>
         </div>
         <div class="navBottom">
@@ -40,7 +63,7 @@
     <div class="slider">
         <div class="sliderWrapper">
             <div class="sliderItem">
-                <img src="./img/air.png" alt="" class="sliderImg">
+                <!-- <img src="./img/air.png" alt="" class="sliderImg"> -->
                 <div class="sliderBg"></div>
                 <h1 class="sliderTitle">AIR FORCE</br> NEW</br> SEASON</h1>
                 <h2 class="sliderPrice">$119</h2>
@@ -49,7 +72,7 @@
                 </a>
             </div>
             <div class="sliderItem">
-                <img src="./img/jordan.png" alt="" class="sliderImg">
+                <!-- <img src="./img/jordan.png" alt="" class="sliderImg"> -->
                 <div class="sliderBg"></div>
                 <h1 class="sliderTitle">AIR JORDAN</br> NEW</br> SEASON</h1>
                 <h2 class="sliderPrice">$149</h2>
@@ -58,7 +81,7 @@
                 </a>
             </div>
             <div class="sliderItem">
-                <img src="./img/blazer.png" alt="" class="sliderImg">
+                <!-- <img src="./img/blazer.png" alt="" class="sliderImg"> -->
                 <div class="sliderBg"></div>
                 <h1 class="sliderTitle">BLAZER</br> NEW</br> SEASON</h1>
                 <h2 class="sliderPrice">$109</h2>
@@ -67,7 +90,7 @@
                 </a>
             </div>
             <div class="sliderItem">
-                <img src="./img/crater.png" alt="" class="sliderImg">
+                <!-- <img src="./img/crater.png" alt="" class="sliderImg"> -->
                 <div class="sliderBg"></div>
                 <h1 class="sliderTitle">CRATER</br> NEW</br> SEASON</h1>
                 <h2 class="sliderPrice">$129</h2>
@@ -76,7 +99,7 @@
                 </a>
             </div>
             <div class="sliderItem">
-                <img src="./img/hippie.png" alt="" class="sliderImg">
+                <!-- <img src="./img/hippie.png" alt="" class="sliderImg"> -->
                 <div class="sliderBg"></div>
                 <h1 class="sliderTitle">HIPPIE</br> NEW</br> SEASON</h1>
                 <h2 class="sliderPrice">$99</h2>
@@ -89,29 +112,29 @@
 
     <div class="features">
         <div class="feature">
-            <img src="./img/shipping.png" alt="" class="featureIcon">
+            <!-- <img src="./img/shipping.png" alt="" class="featureIcon"> -->
             <span class="featureTitle">FREE SHIPPING</span>
             <span class="featureDesc">Free worldwide shipping on all orders.</span>
         </div>
         <div class="feature">
-            <img class="featureIcon" src="./img/return.png" alt="">
+            <!-- <img class="featureIcon" src="./img/return.png" alt=""> -->
             <span class="featureTitle">30 DAYS RETURN</span>
             <span class="featureDesc">No question return and easy refund in 14 days.</span>
         </div>
         <div class="feature">
-            <img class="featureIcon" src="./img/gift.png" alt="">
+            <!-- <img class="featureIcon" src="./img/gift.png" alt=""> -->
             <span class="featureTitle">GIFT CARDS</span>
             <span class="featureDesc">Buy gift cards and use coupon codes easily.</span>
         </div>
         <div class="feature">
-            <img class="featureIcon" src="./img/contact.png" alt="">
+            <!-- <img class="featureIcon" src="./img/contact.png" alt=""> -->
             <span class="featureTitle">CONTACT US!</span>
             <span class="featureDesc">Keep in touch via email and support system.</span>
         </div>
     </div>
 
     <div class="product" id="product">
-        <img src="./img/air.png" alt="" class="productImg">
+        <!-- <img src="./img/air.png" alt="" class="productImg"> -->
         <div class="productDetails">
             <h1 class="productTitle">AIR FORCE</h1>
             <h2 class="productPrice">$199</h2>
@@ -139,8 +162,8 @@
             <input type="text" placeholder="Elton St 21 22-145" class="payInput">
             <h1 class="payTitle">Card Information</h1>
             <div class="cardIcons">
-                <img src="./img/visa.png" width="40" alt="" class="cardIcon">
-                <img src="./img/master.png" alt="" width="40" class="cardIcon">
+                <!-- <img src="./img/visa.png" width="40" alt="" class="cardIcon"> -->
+                <!-- <img src="./img/master.png" alt="" width="40" class="cardIcon"> -->
             </div>
             <input type="password" class="payInput" placeholder="Card Number">
             <div class="cardInfo">
@@ -155,24 +178,24 @@
     <div class="gallery">
         <div class="galleryItem">
             <h1 class="galleryTitle">Be Yourself!</h1>
-            <img src="https://images.pexels.com/photos/9295809/pexels-photo-9295809.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="" class="galleryImg">
+            <!-- <img src="https://images.pexels.com/photos/9295809/pexels-photo-9295809.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" -->
+            alt="" class="galleryImg">
         </div>
         <div class="galleryItem">
-            <img src="https://images.pexels.com/photos/1040427/pexels-photo-1040427.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="" class="galleryImg">
+            <!-- <img src="https://images.pexels.com/photos/1040427/pexels-photo-1040427.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" -->
+            alt="" class="galleryImg">
             <h1 class="galleryTitle">This is the First Day of Your New Life</h1>
         </div>
         <div class="galleryItem">
             <h1 class="galleryTitle">Just Do it!</h1>
-            <img src="https://images.pexels.com/photos/7856965/pexels-photo-7856965.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="" class="galleryImg">
+            <!-- <img src="https://images.pexels.com/photos/7856965/pexels-photo-7856965.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" -->
+            alt="" class="galleryImg">
         </div>
     </div>
     <div class="newSeason">
         <div class="nsItem">
-            <img src="https://images.pexels.com/photos/4753986/pexels-photo-4753986.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="" class="nsImg">
+            <!-- <img src="https://images.pexels.com/photos/4753986/pexels-photo-4753986.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" -->
+            alt="" class="nsImg">
         </div>
         <div class="nsItem">
             <h3 class="nsTitleSm">WINTER NEW ARRIVALS</h3>
@@ -231,10 +254,10 @@
             <div class="footerRightMenu">
                 <h1 class="fMenuTitle">Follow Us</h1>
                 <div class="fIcons">
-                    <img src="./img/facebook.png" alt="" class="fIcon">
-                    <img src="./img/twitter.png" alt="" class="fIcon">
-                    <img src="./img/instagram.png" alt="" class="fIcon">
-                    <img src="./img/whatsapp.png" alt="" class="fIcon">
+                    <!-- <img src="./img/facebook.png" alt="" class="fIcon"> -->
+                    <!-- <img src="./img/twitter.png" alt="" class="fIcon"> -->
+                    <!-- <img src="./img/instagram.png" alt="" class="fIcon"> -->
+                    <!-- <img src="./img/whatsapp.png" alt="" class="fIcon"> -->
                 </div>
             </div>
             <div class="footerRightMenu">
@@ -243,8 +266,10 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="admin.js"></script>
 </body>
 
 </html>
