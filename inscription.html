@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'Inscription</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="Inscription" style="background-image: url(f.jpeg); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+
+  <div class="registration-form">
+    <h2>Formulaire d'Inscription</h2>
+    <form onsubmit="return registerUser()">
+        <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom" required>
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom :</label>
+            <input type="text" class="form-control" id="prenom" placeholder="Entrez votre prénom" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" class="form-control" id="email" placeholder="Entrez votre email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe :</label>
+            <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+        </form>
+      </div>
+  </div>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAHgNnwZZXyytFdZJUtPHoyDBEkoMtDbNE",
+      authDomain: "siteecom-d55ce.firebaseapp.com",
+      projectId: "siteecom-d55ce",
+      storageBucket: "siteecom-d55ce.appspot.com",
+      messagingSenderId: "738265897680",
+      appId: "1:738265897680:web:c2d5ec35ad668e6f725cd5"
+    };
+
+    
+    const app = initializeApp(firebaseConfig);
+
+    
+    const db = getDatabase();
+
+    function registerUser() {
+      
+      const name = document.getElementById("nom").value;
+      const prenom = document.getElementById("prenom").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      
+      set(ref(db, 'users/' + email), {
+        Name: name,
+        Prénom: prenom,
+        Email: email,
+        Motdepasse: password
+      });
+
+      alert("Inscription réussie !");
+      return false; 
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
