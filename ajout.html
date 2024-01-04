@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+   integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="khadija.css"> -->
+  <title>Objects_Ajoutés</title>
+</head>
+ 
+<body class="bg-light">
+ 
+  <div class="container bg-dark p-5 mt-5">
+    
+    <div>
+      <img src="sneakers.png" class="img-fluid">
+    </div>
+    <!-- Button to call the praducts -->
+    <button class="btn btn-light mt-2 mb-2" onclick='populateTableList()'>Show All</button>
+    <!-- Table  -->
+    <table class="table table-image">
+      <thead class="thead-dark">
+        <tr class="text-center">
+          <th>Models</th>
+          <th>Nom</th>
+          <th>Prix (CFA)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <!-- Table body with the list of products -->
+      <tbody id="productList" class="text-light">
+
+      </tbody>
+    </table>
+ 
+  </div>
+  <!-- Footer -->
+  <footer class="container fixed-bottom  bg-dark text-light">
+    <div class=" text-center py-3">© 2020 Copyright:</div>  
+  </footer>
+<!-- Code javaScript -->
+  <script src="ajout.js"></script>
+</body>
+ 
+</html>
