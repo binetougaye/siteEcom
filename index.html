@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/">
     <link rel="stylesheet" href="style.css">
     <title>Nike Store</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-white">
+    <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -39,6 +46,7 @@
             </div>
             <div class="d-flex justify-content-end">
                 <p class="text-dark"><i class="bi bi-person-fill"></i></p>
+                <p><i class="fa-sun-o sun"></i></p>
 
                 <!-- Button trigger modal -->
                 <!-- <button type="button" class="btn btn-primary" > -->
@@ -61,7 +69,9 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <p id="productName"></p>
+                                <p id="productPrice"></p>
+                                <p id="total"></p>
                             </div>
                             <div class="modal-footer">
 
@@ -73,482 +83,139 @@
             </div>
         </div>
     </nav>
-    <!-- <nav id="nav">
-        <div class="navTop">
-            <div class="navItem">
-                <img src="./img/sneakers.png" alt="">
-            </div>
-            <div class="navItem">
-                <i class="bi bi-person"></i>
 
-
-                <span class="span fs-6">0</span>
-                <i class="bi bi-bag" data-bs-toggle="modal" data-bs-target="#exampleModal" id="cart">
-
-                    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">Ton panier
-                                        <span id="product">()</span>
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn w-100 modalBtn text-white">Ajoute des
-                                        produits</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </i>
-            </div> 
-        </div>
-        <div class="navBottom">
-            <h3 class="menuItem">AIR FORCE</h3>
-            <h3 class="menuItem">JORDAN</h3>
-            <h3 class="menuItem">BLAZER</h3>
-            <h3 class="menuItem">CRATER</h3>
-            <h3 class="menuItem">HIPPIE</h3>
-        </div>
-    </nav> -->
     <div class="bg ms-5 me-5">
-        <!-- <div class="sliderWrapper">
-            <div class="sliderItem">
-                <img src="./img/air.png" alt="" class="sliderImg">
-                <div class="sliderBg"></div>
-                <h1 class="sliderTitle">AIR FORCE</br> NEW</br> SEASON</h1>
-                <h2 class="sliderPrice">$119</h2>
-             
-                <button class="buyButton">Add to cart!</button>
-      
-            </div>
-            <div class="sliderItem">
-                <img src="./img/jordan.png" alt="" class="sliderImg">
-                <div class="sliderBg"></div>
-                <h1 class="sliderTitle">AIR JORDAN</br> NEW</br> SEASON</h1>
-                <h2 class="sliderPrice">$149</h2>
 
-                <button class="buyButton">Add to cart!</button>
 
-            </div>
-            <div class="sliderItem">
-                <img src="./img/blazer.png" alt="" class="sliderImg">
-                <div class="sliderBg"></div>
-                <h1 class="sliderTitle">BLAZER</br> NEW</br> SEASON</h1>
-                <h2 class="sliderPrice">$109</h2>
-
-                <button class="buyButton">Add to cart!</button>
-
-            </div>
-            <div class="sliderItem">
-                <img src="./img/crater.png" alt="" class="sliderImg">
-                <div class="sliderBg"></div>
-                <h1 class="sliderTitle">CRATER</br> NEW</br> SEASON</h1>
-                <h2 class="sliderPrice">$129</h2>
-
-                <button class="buyButton">Add to cart!</button>
-
-            </div>
-            <div class="sliderItem">
-                <img src="./img/hippie.png" alt="" class="sliderImg"> -->
-        <!-- <div class="sliderBg"></div>
-                <h1 class="sliderTitle">HIPPIE</br> NEW</br> SEASON</h1>
-                <h2 class="sliderPrice">$99</h2>
-
-                <button class="buyButton">Add to cart!</button>
-
-            </div>
-        </div> -->
-        <!-- <img src="img/shop.webp" alt=""> -->
+        <img src="img/she_NN_bannerinterior_2912.avif" alt="" class="bgHeader">
         <div class="middle">
-            <h1 class="text-white fw-bold">An easy start
+            <h1 class="text-white fw-bold text-middle">An easy start
 
             </h1>
+            <div id="lien" class=" d-flex justify-content-center align-items-center">
+                <a href="#girls" class=" text-dark text-center w-100 mt-3 button p-2 rounded fw-bold">Decouvrir nos
+                    produits</a>
+            </div>
         </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="girls">
         <div class="row">
-            <h1 class="text-center fw-bold mt-3 mb-3">#GIRLS
+            <h1 class="text-center fw-bold mt-3 mb-3 text">#GIRLS
                 <i class="bi bi-heart"></i>
             </h1>
         </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card border-0">
-                    <img src="img/téléchargement.jpeg" class="" alt="...">
-                    <div class="card-body test">
-                        <h4 class="clothes text-white fw-bold">Doudoune</h4>
-                        <p class="icon"><i class="bi bi-heart"></i></p>
-                        <div class="buttons">
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">44</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">46</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">48</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">50</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">52</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">54</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">56</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0">
-                    <img src="img/she_landing_jerseys_2912.avif" class="" alt="...">
-                    <div class="card-body">
-                        <h4 class="clothes text-white fw-bold">Pulls et cardigans</h4>
-                        <p class="icon"><i class="bi bi-heart"></i></p>
-                        <div class="buttons">
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">44</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">46</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">48</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">50</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">52</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">54</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">56</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0">
-                    <img src="img/téléchargement (2).jpeg" class="" alt="...">
-                    <div class="card-body">
-                        <h4 class="clothes text-white fw-bold">Robes</h4>
-                        <p class="icon"><i class="bi bi-heart"></i></p>
-                        <div class="buttons">
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">44</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">46</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">48</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">50</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">52</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">54</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">56</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0">
-                    <img src="img/téléchargement (3).jpeg" class="" alt="...">
-                    <div class="card-body">
+        <div class="pro">
+            <div class="row">
 
-                        <h4 class="clothes text-white fw-bold">Robe portefeuille</h4>
-                        <p class="icon"><i class="bi bi-heart"></i></p>
-                        <div class="buttons">
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">44</button>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <img src="img/she_landing_jerseys_2912.avif" id="tt" class="img" alt="...">
+                        <div class="card-body">
+                            <h4 class="clothes text-white fw-bold">Pulls et cardigans</h4>
+                            <p class="clothes2 text-white fw-bold ">Découvrez davantage
+
+                            </p>
+
+                            <p class="icon"><i class="bi bi-heart"></i></p>
+                            <!-- <div class="buttons">
+                                <div><button>XXS</button></div>
+                                <div><button>XS</button></div>
+                                <div><button>S</button></div>
+                                <div><button>M</button></div>
+                                <div><button>L</button></div>
+                                <div><button>XL</button></div>
+                                <div><button>XXL</button></div>
+                            </div> -->
+                            <!-- <span class="price">295</span> <span>$</span> -->
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <img src="img/téléchargement (2).jpeg" class="img" alt="...">
+                        <div class="card-body">
+                            <h4 class="clothes text-white fw-bold">Robes</h4>
+                            <p class="clothes2 text-white">Découvrez davantage</p>
+                            <p class="icon"><i class="bi bi-heart"></i></p>
+                            <!-- <span class="price">300</span> <span>$</span> -->
+                            <div class="buttons">
+                                <div><button>XXS</button></div>
+                                <div><button>XS</button></div>
+                                <div><button>S</button></div>
+                                <div><button>M</button></div>
+                                <div><button>L</button></div>
+                                <div><button>XL</button></div>
+                                <div><button>XXL</button></div>
                             </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">46</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">48</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">50</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">52</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">54</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">56</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <img src="img/she_landing_totallook_2912.avif" class="img" alt="...">
+                        <div class="card-body">
+                            <h4 class="clothes text-white fw-bold">Total look</h4>
+                            <p class="clothes2 text-white">Découvrez davantage</p>
+                            <p class="icon"><i class="bi bi-heart"></i></p>
+                            <!-- <span class="price">500</span> <span>$</span> -->
+                            <div class="buttons">
+                                <div><button>XXS</button></div>
+                                <div><button>XS</button></div>
+                                <div><button>S</button></div>
+                                <div><button>M</button></div>
+                                <div><button>L</button></div>
+                                <div><button>XL</button></div>
+                                <div><button>XXL</button></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-
-            <div class="col-lg-3">
-                <div class="card border-0">
-                    <img src="img/she_landing_totallook_2912.avif" class="" alt="...">
-                    <div class="card-body">
-                        <h4 class="clothes text-white fw-bold">Total look</h4>
-                        <p class="icon"><i class="bi bi-heart"></i></p>
-                        <div class="buttons">
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">44</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">46</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">48</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">50</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">52</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">54</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">56</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">Add</button>
-                            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <img src="img/she_landing_exclusivoonline_2912.avif" class="img" alt="...">
+                        <div class="card-body">
+                            <h4 class="clothes text-white fw-bold">Basiques</h4>
+                            <p class="clothes2 text-white">Découvrez davantage</p>
+                            <p class="icon"><i class="bi bi-heart"></i></p>
+                            <!-- <span class="price">95</span> <span>$</span> -->
+                            <div class="buttons"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <img src="img/she_landing_zapatos_2912.avif" class="img" alt="...">
+                        <div class="card-body">
+                            <h4 class="clothes text-white fw-bold">Best sellers</h4>
+                            <p class="clothes2 text-white">Découvrez davantage</p>
+                            <p class="icon"><i class="bi bi-heart"></i></p>
+                            <!-- <span class="price">175</span> <span>$</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <img src="img/she_landing_coattime_2912.avif" class="w-100 img" alt="...">
+                        <div class="card-body">
+                            <h4 class="clothes text-white fw-bold">Coat</h4>
+                            <p class="clothes2 text-white">Découvrez davantage</p>
+                            <p class="icon"><i class="bi bi-heart"></i></p>
+                            <!-- <span class="price">210</span> <span>$</span> -->
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-3">
-                <div class="card border-0">
-                    <img src="img/she_landing_exclusivoonline_2912.avif" class="" alt="...">
-                    <div class="card-body">
-                        <h4 class="clothes text-white fw-bold">Trench</h4>
-                        <p class="icon"><i class="bi bi-heart"></i></p>
-                        <div class="buttons">
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">44</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">46</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">48</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">50</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">52</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">54</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">56</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0">
-                    <img src="img/she_landing_zapatos_2912.avif" class="" alt="...">
-                    <div class="card-body">
-                        <h4 class="clothes text-white fw-bold">Best sellers</h4>
-                        <p class="icon"><i class="bi bi-heart"></i></p>
-                        <div class="buttons">
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">44</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">46</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">48</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">50</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">52</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">54</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">56</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-3">
-                <div class="card border-0">
-                    <img src="img/she_landing_coattime_2912.avif" class="w-100" alt="...">
-                    <div class="card-body">
-                        <h4 class="clothes text-white fw-bold">Coat</h4>
-                        <p class="icon"><i class="bi bi-heart"></i></p>
-                        <div class="buttons">
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">44</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">46</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">48</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">50</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">52</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1">54</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">56</button>
-                            </div>
-                            <div>
-                                <button class="border-0 me-2 bg-white rounded p-1 mt-1">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <!-- <div class="product" id="product">
-        <img src="./img/air.png" alt="" class="productImg">
-        <div class="productDetails">
-            <h1 class="productTitle">AIR FORCE</h1>
-            <h2 class="productPrice">$199</h2>
-            <p class="productDesc">Lorem ipsum dolor sit amet consectetur impal adipisicing elit. Alias assumenda
-                dolorum
-                doloremque sapiente aliquid aperiam.</p>
-            <div class="colors">
-                <div class="color"></div>
-                <div class="color"></div>
-            </div>
-            <div class="sizes">
-                <div class="size">42</div>
-                <div class="size">43</div>
-                <div class="size">44</div>
-            </div>
-            <button class="productButton">BUY NOW!</button>
-        </div>
-        <div class="payment">
-            <h1 class="payTitle">Personal Information</h1>
-            <label>Name and Surname</label>
-            <input type="text" placeholder="John Doe" class="payInput">
-            <label>Phone Number</label>
-            <input type="text" placeholder="+1 234 5678" class="payInput">
-            <label>Address</label>
-            <input type="text" placeholder="Elton St 21 22-145" class="payInput">
-            <h1 class="payTitle">Card Information</h1>
-            <div class="cardIcons">
-                <img src="./img/visa.png" width="40" alt="" class="cardIcon">
-                <img src="./img/master.png" alt="" width="40" class="cardIcon">
-            </div>
-            <input type="password" class="payInput" placeholder="Card Number">
-            <div class="cardInfo">
-                <input type="text" placeholder="mm" class="payInput sm">
-                <input type="text" placeholder="yyyy" class="payInput sm">
-                <input type="text" placeholder="cvv" class="payInput sm">
-            </div>
-            <button class="payButton">Checkout!</button>
-            <span class="close">X</span>
-        </div>
+
+
     </div>
-    <div class="gallery">
-        <div class="galleryItem">
-            <h1 class="galleryTitle">Be Yourself!</h1>
-            <img src="https://images.pexels.com/photos/9295809/pexels-photo-9295809.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="" class="galleryImg">
-        </div>
-        <div class="galleryItem">
-            <img src="https://images.pexels.com/photos/1040427/pexels-photo-1040427.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="" class="galleryImg">
-            <h1 class="galleryTitle">This is the First Day of Your New Life</h1>
-        </div>
-        <div class="galleryItem">
-            <h1 class="galleryTitle">Just Do it!</h1>
-            <img src="https://images.pexels.com/photos/7856965/pexels-photo-7856965.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="" class="galleryImg">
-        </div>
-    </div>
-    <div class="newSeason">
-        <div class="nsItem">
-            <img src="https://images.pexels.com/photos/4753986/pexels-photo-4753986.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="" class="nsImg">
-        </div>
-        <div class="nsItem">
-            <h3 class="nsTitleSm">WINTER NEW ARRIVALS</h3>
-            <h1 class="nsTitle">New Season</h1>
-            <h1 class="nsTitle">New Collection</h1>
-            <a href="#nav">
-                <button class="nsButton">CHOOSE YOUR STYLE</button>
-            </a>
-        </div>
-        <div class="nsItem">
-            <img src="https://images.pexels.com/photos/7856965/pexels-photo-7856965.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt="" class="nsImg">
-        </div>
-    </div> -->
+
     <footer>
         <div class="footerLeft">
             <div class="footerMenu">
