@@ -478,6 +478,7 @@ for (i = 0; i < clothes.length; i++) {
         }
       }
       increment();
+      decrement();
     } else if (names.innerText === "Total look") {
       textMiddle.innerHTML = "TOTAL LOOK";
       bgHeader.src = "img/bg.avif";
@@ -868,8 +869,8 @@ for (i = 0; i < clothes.length; i++) {
       function increment() {
         for (let i = 0; i < plus.length; i++) {
           plus[i].addEventListener("click", function () {
-            let z = p++;
-            add[i].innerHTML = shop.innerHTML = z;
+            // let z = p++;
+            add[i].innerHTML = shop.innerHTML = p++;
           });
         }
       }
@@ -882,6 +883,7 @@ for (i = 0; i < clothes.length; i++) {
         }
       }
       increment();
+      decrement();
     }
   });
 }
