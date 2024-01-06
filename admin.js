@@ -87,8 +87,9 @@ for (i = 0; i < clothes.length; i++) {
       <div class="row">
         <div class="col-lg-6">
                       <div class="card border-0">
-                          <img src="img/pull.jpeg" class="img" alt="...">
-                          <div class="card-body">
+                          <img src="img/pull.jpeg" class="" alt="...">
+                          <div class="card-body d-flex justify-content-between">
+                          <div>
                           <p>Pull-over Lurex grosse maille</p>
                           <p>49,99 €</p>
                           <div class="bouton">
@@ -100,25 +101,31 @@ for (i = 0; i < clothes.length; i++) {
                        </div>
 
                           </div>
+                          <div>
+                          <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                          <div>
+                              <i class="fa fa-plus" aria-hidden="true"></i>
+                          </div>
+                          <span class="add ms-3 me-3">Ajouter</span>
+                          <div>
+                              <i class="fa fa-minus" aria-hidden="true"></i>
+                          </div>
+                      </button>
+                      </div>   
+                          </div>
                       </div>
                   </div>
+
                   <div class="col-lg-6">
                       <div class="card border-0">
                           <img src="img/pull2.jpeg" class="img" alt="...">
                           <div class="card-body">
                           <p>Pull-over torsadé foil</p>
                           <p>59,99 €</p>
-                          <div class="bouton">
-                          <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          <div class="boutonn ">
-                          <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                          </div>
-                          </button>
-                       </div>
-
                              
                           </div>
                       </div>
+                     
                   </div>
               </div>
               <div class="row">
@@ -129,24 +136,28 @@ for (i = 0; i < clothes.length; i++) {
                       <div class="card-body">
                       <p>Cardigan liserés contrastants</p>
                       <p>79,99 €</p>
-
-                      <div class="bouton">
-                      <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      <div class="boutonn ">
-                      <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
                       </div>
-                      </button>
-                   </div>
-
-
+                      <div>
+                      <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                      <div>
+                          <i class="fa fa-plus" aria-hidden="true"></i>
+                      </div>
+                      <span class="add ms-3 me-3">Ajouter</span>
+                      <div>
+                          <i class="fa fa-minus" aria-hidden="true"></i>
+                      </div>
+                  </button>
+                      </div>
                       </div>
                   </div>
+                 
               </div>
   
               <div class="col-lg-6">
                   <div class="card border-0">
-                      <img src="img/pull4.jpeg" class="img" alt="...">
-                      <div class="card-body">
+                      <img src="img/pull4.jpeg" class="" alt="...">
+                      <div class="card-body d-flex justify-content-between">
+                      <div>
                       <p>Pull-over oversize col V</p>
                       <p>69,99 €</p>
 
@@ -161,33 +172,38 @@ for (i = 0; i < clothes.length; i++) {
 
 
                       </div>
+                      <div>
+                        <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px; ">
+                            <div>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+                            <span class="add ms-3 me-3">Ajouter</span>
+                            <div>
+                                <i class="fa fa-minus" aria-hidden="true"></i>
+                            </div>
+                        </button>
+                      </div>
+                      </div>
                   </div>
+                 
               </div>
           </div>
           <div class="d-flex justify-content-center align-items-center">
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-    } 
-    else if (names.innerText === "Robes") {
+    } else if (names.innerText === "Robes") {
       text.innerText = "ROBES ET COMBINAISONS POUR FEMME";
       container.innerHTML = `
       <div class="row">
   
                   <div class="col-lg-6">
                       <div class="card border-0">
-                          <img src="img/robe1.jpeg" class="img" alt="...">
-                          <div class="card-body">
+                          <img src="img/robe1.jpeg" class="" alt="...">
+                          <div class="card-body d-flex justify-content-between">
+                            <div>
                               <p>Robe asymétrique sequins</p>
                               <p>49,99 €</p>
-                              <div class="bouton">
-                              <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                              <div class="boutonn ">
-                              <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                              </div>
-                              </button>
-                           </div>
-        
                           </div>
                       </div>
                   </div>
@@ -198,14 +214,6 @@ for (i = 0; i < clothes.length; i++) {
                           <p>Robe maille col roulé
                           </p>
                           <p>39,99 €</p>
-                          <div class="bouton">
-                          <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          <div class="boutonn ">
-                          <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                          </div>
-                          </button>
-                       </div>
-    
                              
                           </div>
                       </div>
@@ -215,8 +223,9 @@ for (i = 0; i < clothes.length; i++) {
   
               <div class="col-lg-6">
                   <div class="card border-0">
-                      <img src="img/robe3.jpeg" class="img" alt="...">
-                      <div class="card-body">
+                      <img src="img/robe3.jpeg" class="" alt="...">
+                      <div class="card-body d-flex justify-content-between">
+                      <div>
                       <p>Robe maille col roulé
                       </p>
                       <p>39,99 €</p>
@@ -229,7 +238,21 @@ for (i = 0; i < clothes.length; i++) {
                    </div>
 
                       </div>
+                      <div>
+                        <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                            <div>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+                            <span class="add ms-3 me-3">Ajouter</span>
+                            <div>
+                                <i class="fa fa-minus" aria-hidden="true"></i>
+                            </div>
+                        </button>
+                      </div>
+                      </div>
                   </div>
+                  
+             
               </div>
   
               <div class="col-lg-6">
@@ -239,61 +262,64 @@ for (i = 0; i < clothes.length; i++) {
                       <p>Robe midi maille côtelée col montant
                       </p>
                       <p>49,99 €</p>
-                      <div class="bouton">
-                      <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      <div class="boutonn ">
-                      <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                      </div>
-                      </button>
-                   </div>
-
                       </div>
                   </div>
+                 
               </div>
           </div>
           <div class="d-flex justify-content-center align-items-center">
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
+      let plus = document.querySelectorAll(".fa-plus");
+      let minus = document.querySelectorAll(".fa-minus");
+      let add = document.querySelectorAll(".add");
+      let shop = document.querySelector(".panier");
+      console.log(minus);
+      let p = 1;
+      function increment() {
+        for (let i = 0; i < plus.length; i++) {
+          plus[i].addEventListener("click", function () {
+            add[i].innerHTML = shop.innerHTML = p++;
+          });
+        }
+      }
+
+      function decrement() {
+        for (let i = 0; i < minus.length; i++) {
+          minus[i].addEventListener("click", function () {
+            add[i].innerHTML = shop.innerHTML = p--;
+          });
+        }
+      }
+      increment();
+      decrement();
     } else if (names.innerText === "Best sellers") {
       text.innerHTML = "BEST SELLERS";
       container.innerHTML = `
       <div class="row">
-  
                   <div class="col-lg-6">
                       <div class="card border-0">
                           <img src="img/b1.jpeg" class="img" alt="...">
                           <div class="card-body">
+                        <h5>NOUVELLE COLLECTION - PREMIUM</h5>
                         <p>Manteau laine ceinture</p>
                         <p>Prix actuel 199,99€</p>
-                        <div class="bouton">
-                        <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <div class="boutonn ">
-                        <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                        </div>
-                        </button>
-                     </div>
-  
                           </div>
                       </div>
+                      
                   </div>
                   <div class="col-lg-6">
                       <div class="card border-0">
                           <img src="img/b2.jpeg" class="img" alt="...">
                           <div class="card-body">
+                          <h5>NOUVELLE COLLECTION</h5>
                           <p>Manteau laine ajusté</p>
                           <p>119,99 €</p>
-                          <div class="bouton">
-                          <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          <div class="boutonn ">
-                          <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                          </div>
-                          </button>
-                       </div>
-    
                              
                           </div>
                       </div>
+                      
                   </div>
               </div>
               <div class="row">
@@ -302,42 +328,52 @@ for (i = 0; i < clothes.length; i++) {
                   <div class="card border-0">
                       <img src="img/b3.jpeg" class="img" alt="...">
                       <div class="card-body">
+                      <h5>NOUVELLE COLLECTION</h5>
                       <p>Robe cache-cœur boucle</p>
                       <p>69,99 €</p>
-                      <div class="bouton">
-                      <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      <div class="boutonn ">
-                      <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                      </div>
-                      </button>
-                   </div>
-
                       </div>
                   </div>
+                  
               </div>
   
               <div class="col-lg-6">
                   <div class="card border-0">
                       <img src="img/b4.jpeg" class="img" alt="...">
                       <div class="card-body">
+                      <h5>NOUVELLE COLLECTION</h5>
                       <p>Veste costume droite</p>
                       <p>75,99 €</p>
-                      <div class="bouton">
-                      <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      <div class="boutonn ">
-                      <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                      </div>
-                      </button>
-                   </div>
-
                       </div>
                   </div>
+                  
               </div>
           </div>
           <div class="d-flex justify-content-center align-items-center">
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
+      let plus = document.querySelectorAll(".fa-plus");
+      let minus = document.querySelectorAll(".fa-minus");
+      let add = document.querySelectorAll(".add");
+      let shop = document.querySelector(".panier");
+      console.log(minus);
+      let p = 1;
+      function increment() {
+        for (let i = 0; i < plus.length; i++) {
+          plus[i].addEventListener("click", function () {
+            add[i].innerHTML = shop.innerHTML = p++;
+          });
+        }
+      }
+
+      function decrement() {
+        for (let i = 0; i < minus.length; i++) {
+          minus[i].addEventListener("click", function () {
+            add[i].innerHTML = shop.innerHTML = p--;
+          });
+        }
+      }
+      increment();
     } else if (names.innerText === "Total look") {
       textMiddle.innerHTML = "TOTAL LOOK";
       bgHeader.src = "img/bg.avif";
@@ -350,36 +386,24 @@ for (i = 0; i < clothes.length; i++) {
                       <div class="card border-0">
                           <img src="img/look1.jpeg" class="img" alt="...">
                           <div class="card-body">
+                          <h5>NOUVELLE COLLECTION</h5>
                           <p>Cardigan cache-cœur côtelée</p>
                           <p>39,99 €</p>
-                          <div class="bouton">
-                          <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          <div class="boutonn ">
-                          <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                          </div>
-                          </button>
-                       </div>
-    
                           </div>
                       </div>
+                     
                   </div>
                   <div class="col-lg-6">
                       <div class="card border-0">
                           <img src="img/look2.jpeg" class="img" alt="...">
                           <div class="card-body">
   
+                          <h5>NOUVELLE COLLECTION</h5>
                           <p>Jupe portefeuille imprimée</p>
                           <p>49,99 €</p>
-                          <div class="bouton">
-                          <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          <div class="boutonn ">
-                          <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                          </div>
-                          </button>
-                       </div>
-    
                           </div>
                       </div>
+                      
                   </div>
               </div>
               <div class="row">
@@ -388,42 +412,64 @@ for (i = 0; i < clothes.length; i++) {
                   <div class="card border-0">
                       <img src="img/look3.jpeg" class="img" alt="...">
                       <div class="card-body">
+                      <h5>NOUVELLE COLLECTION</h5>
                       <p>Pantalon maille wideleg</p>
                       <p>29,99 €</p>
-                      <div class="bouton">
-                      <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      <div class="boutonn ">
-                      <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                      </div>
-                      </button>
-                   </div>
-
                       </div>
                   </div>
+                
               </div>
   
               <div class="col-lg-6">
                   <div class="card border-0">
                       <img src="img/look4.jpeg" class="img" alt="...">
                       <div class="card-body">
+                      <h5>NOUVELLE COLLECTION</h5>
                       <p>Pantalon coutures décoratives</p>
                       <p>29,99 €</p>
-                      <div class="bouton">
-                      <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      <div class="boutonn ">
-                      <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
                       </div>
-                      </button>
-                   </div>
-
+                      <div>
+                        <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                            <div>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+                            <span class="add ms-3 me-3">Ajouter</span>
+                            <div>
+                                <i class="fa fa-minus" aria-hidden="true"></i>
+                            </div>
+                        </button>
+                      </div>
                       </div>
                   </div>
+                 
               </div>
           </div>
           <div class="d-flex justify-content-center align-items-center">
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
+      let plus = document.querySelectorAll(".fa-plus");
+      let minus = document.querySelectorAll(".fa-minus");
+      let add = document.querySelectorAll(".add");
+      let shop = document.querySelector(".panier");
+      console.log(minus);
+      let p = 1;
+      function increment() {
+        for (let i = 0; i < plus.length; i++) {
+          plus[i].addEventListener("click", function () {
+            add[i].innerHTML = shop.innerHTML = p++;
+          });
+        }
+      }
+
+      function decrement() {
+        for (let i = 0; i < minus.length; i++) {
+          minus[i].addEventListener("click", function () {
+            add[i].innerHTML = shop.innerHTML = p--;
+          });
+        }
+      }
+      increment();
     } else if (names.innerText === "Coat") {
       textMiddle.innerHTML = "COAT TIME";
       bgHeader.src = "img/coatTime.avif";
@@ -435,35 +481,24 @@ for (i = 0; i < clothes.length; i++) {
                       <div class="card border-0">
                           <img src="img/coat1.jpeg" class="img" alt="...">
                           <div class="card-body">
+                          <h5>NOUVELLE COLLECTION - PREMIUM</h5>
                           <p>Anorak imperméable duvet</p>
                           <p>179,99 €</p>
-                          <div class="bouton">
-                          <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          <div class="boutonn ">
-                          <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                          </div>
-                          </button>
-                       </div>
-    
                           </div>
                       </div>
+                     
                   </div>
                   <div class="col-lg-6">
                       <div class="card border-0">
                           <img src="img/coat2.jpeg" class="img" alt="...">
                           <div class="card-body">
+                          <h5>NOUVELLE COLLECTION</h5>
                           <p>Manteau en fausse fourrure à ornements</p>
                           <p>119,99 €</p>
-                          <div class="bouton">
-                          <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          <div class="boutonn ">
-                          <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                          </div>
-                          </button>
-                       </div>
-    
+                             
                           </div>
                       </div>
+                     
                   </div>
               </div>
               <div class="row">
@@ -472,42 +507,64 @@ for (i = 0; i < clothes.length; i++) {
                   <div class="card border-0">
                       <img src="img/coat3.jpeg" class="img" alt="...">
                       <div class="card-body">
+                      <h5>NOUVELLE COLLECTION</h5>
                       <p>Manteau en fausse fourrure à ornements</p>
                       <p>119,99 €</p>
-                      <div class="bouton">
-                      <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      <div class="boutonn ">
-                      <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                      </div>
-                      </button>
-                   </div>
-
                       </div>
                   </div>
+                  
               </div>
   
               <div class="col-lg-6">
                   <div class="card border-0">
                       <img src="img/coat4.avif" class="img" alt="...">
                       <div class="card-body">
+                      <h5>NOUVELLE COLLECTION</h5>
                       <p>Manteau laine fait main oversize</p>
                       <p>149,99 €</p>
-                      <div class="bouton">
-                      <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      <div class="boutonn ">
-                      <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
                       </div>
-                      </button>
-                   </div>
-
+                      <div>
+                         <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                            <div>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+                            <span class="add ms-3 me-3">Ajouter</span>
+                            <div>
+                                <i class="fa fa-minus" aria-hidden="true"></i>
+                            </div>
+                        </button>
+                      </div>
                       </div>
                   </div>
+                 
               </div>
           </div>
           <div class="d-flex justify-content-center align-items-center">
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
+      let plus = document.querySelectorAll(".fa-plus");
+      let minus = document.querySelectorAll(".fa-minus");
+      let add = document.querySelectorAll(".add");
+      let shop = document.querySelector(".panier");
+      console.log(minus);
+      let p = 1;
+      function increment() {
+        for (let i = 0; i < plus.length; i++) {
+          plus[i].addEventListener("click", function () {
+            add[i].innerHTML = shop.innerHTML = p++;
+          });
+        }
+      }
+
+      function decrement() {
+        for (let i = 0; i < minus.length; i++) {
+          minus[i].addEventListener("click", function () {
+            add[i].innerHTML = shop.innerHTML = p--;
+          });
+        }
+      }
+      increment();
     } else if (names.innerText === "Basiques") {
       textMiddle.innerHTML = "UP-TO-DATE BASICS";
       bgHeader.src = "img/bgBase.avif";
@@ -519,36 +576,24 @@ for (i = 0; i < clothes.length; i++) {
                       <div class="card border-0">
                           <img src="img/base1.jpeg" class="img" alt="...">
                           <div class="card-body">
+                          <h5>NOUVELLE COLLECTION</h5>
                           <p>Manteau laine ceinture</p>
                           <p>179,99 €</p>
-                          <div class="bouton">
-                          <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          <div class="boutonn ">
-                          <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                          </div>
-                          </button>
-                       </div>
-    
                           </div>
                       </div>
+                     
                   </div>
                   <div class="col-lg-6">
                       <div class="card border-0">
                           <img src="img/base2.jpeg" class="img" alt="...">
                           <div class="card-body">
+                          <h5>NOUVELLE COLLECTION</h5>
                           <p>Manteau laine ajusté</p>
                           <p>119,99 €</p>
-                          <div class="bouton">
-                          <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          <div class="boutonn ">
-                          <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
-                          </div>
-                          </button>
-                       </div>
-    
                              
                           </div>
                       </div>
+                     
                   </div>
               </div>
               <div class="row">
@@ -557,16 +602,21 @@ for (i = 0; i < clothes.length; i++) {
                   <div class="card border-0">
                       <img src="img/base3.jpeg" class="img" alt="...">
                       <div class="card-body">
+                      <h5>NOUVELLE COLLECTION</h5>
                       <p>Manteau fait main avec ceinture</p>
                       <p>149,99 €</p>
-                      <div class="bouton">
-                      <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      <div class="boutonn ">
-                      <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
                       </div>
-                      </button>
-                   </div>
-
+                      <div>
+                      <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                      <div>
+                          <i class="fa fa-plus" aria-hidden="true"></i>
+                      </div>
+                      <span class="add ms-3 me-3">Ajouter</span>
+                      <div>
+                          <i class="fa fa-minus" aria-hidden="true"></i>
+                      </div>
+                  </button>
+                      </div>
                       </div>
                   </div>
               </div>
@@ -575,16 +625,21 @@ for (i = 0; i < clothes.length; i++) {
                   <div class="card border-0">
                       <img src="img/base4.jpeg" class="img" alt="...">
                       <div class="card-body">
+                      <h5>NOUVELLE COLLECTION</h5>
                       <p>Veste double face similicuir</p>
                       <p>79,99 €</p>
-                      <div class="bouton">
-                      <button type="button" class="btn btn-secondary w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      <div class="boutonn ">
-                      <i class="fa-solid fa-plus" id="fa-solid"></i>Ajouter<i class="fa-solid fa-minus"></i>
                       </div>
-                      </button>
-                   </div>
-
+                      <div>
+                        <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                            <div>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+                            <span class="add ms-3 me-3">Ajouter</span>
+                            <div>
+                                <i class="fa fa-minus" aria-hidden="true"></i>
+                            </div>
+                        </button>
+                      </div>
                       </div>
                   </div>
               </div>
@@ -593,33 +648,51 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-    }
+      let plus = document.querySelectorAll(".fa-plus");
+      let minus = document.querySelectorAll(".fa-minus");
+      let add = document.querySelectorAll(".add");
+      let shop = document.querySelector(".panier");
+      console.log(minus);
+      let p = 1;
+      function increment() {
+        for (let i = 0; i < plus.length; i++) {
+          plus[i].addEventListener("click", function () {
+            let z = p++;
+            add[i].innerHTML = shop.innerHTML = z;
+          });
+        }
+      }
 
-    // for (i = 0; i < tabProduct.length; i++) {
-    // console.log(tabProduct[i]);
-
-    let ind = 0;
-    let total = document.getElementById("total");
-    nomDuProduit.innerHTML += `<p>Nom du produit: ${names.innerText}</p>`;
-    // prixDuProduit.innerHTML += `<p>Prix du produit : ${prix.innerText}</p>`;
-    // let prixTotal = ;
-
-    total.innerHTML = `<p>Prix total =${Number(prix.innerText)}</p>`;
-    // }
-    let inc = n++;
-    span.innerHTML = inc;
-    if (inc === 1) {
-      modalTitle.innerHTML = `Ton panier (${inc} produit)`;
-    } else {
-      modalTitle.innerHTML = `Ton panier (${inc} produits)`;
+      function decrement() {
+        for (let i = 0; i < minus.length; i++) {
+          minus[i].addEventListener("click", function () {
+            add[i].innerHTML = shop.innerHTML = p--;
+          });
+        }
+      }
+      increment();
     }
   });
 }
+
+// let inc = document.querySelectorAll(".inc");
+// let dec = document.querySelectorAll(".dec");
+// let span = document.querySelectorAll(".span");
+// let p = 1;
+
+// FUNCTION AJOUT DANS LE PANIER
+
+// FUNCTION DIMINUER DANS LE PANIER
+// function diminue() {
+//   let incr = p--;
+//   add.innerHTML = incr;
+//   shop.innerHTML = incr;
+// }
+// FUNCTION BACK
 function refresh() {
   location.reload();
 }
 // Voir le panier
-// Mode dark/sombre
 let img = document.querySelectorAll(".img");
 let Buttons = document.querySelectorAll(".buttons");
 console.log(img);
