@@ -149,11 +149,10 @@ footer {
 
 .span {
     position: relative;
-    left: -23px;
+    right:28px;
     text-align: center;
     /* font-size: 15px; */
 }
-
 .test {
     color: #fff;
 }
@@ -165,7 +164,7 @@ footer {
 }
 
 .bi {
-    font-size: 30px;
+    font-size: 40px;
     cursor: pointer;
 }
 
@@ -241,7 +240,6 @@ a {
 }
 
 
-
 @media screen and (max-width:480px) {
     nav {
         padding: 20px;
@@ -250,6 +248,10 @@ a {
     .search {
         display: none;
     }
+    /* .navbar-toggler{
+        width:20px;
+    } */
+    
 
     .navBottom {
         flex-wrap: wrap;
