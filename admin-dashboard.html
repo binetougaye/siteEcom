@@ -19,7 +19,8 @@
                         <img src="" alt="" />
                     </div>
                     <div class="home-text text-center">
-                        <h4 id="user-name"></h4>
+                        <h4 id="msg"></h4>
+                        <h4 id="greet"></h4>
                         <p><span>Admin</span></p>
                     </div>
                 </div>
@@ -38,7 +39,7 @@
                     </a>
                     
                 </div>
-                <button type="button" onclick="LogOut()">Logout</button>
+                <button type="button" id="signoutbutton" >Logout</button>
             </div>
             <div class="col-10 tabpane p-0">
                 <div class="tab-content" id="nav-tabContent">
@@ -93,6 +94,35 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"))
+        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"))
+
+
+        let MsgHead = document.getElementById("msg")
+        let GreetHead = document.getElementById("greet")
+        let signoutBtn = document.getElementById("signoutbutton")
+
+        let Signout = () =>{
+            sessionStorage.removeItem("user-creds")
+            sessionStorage.removeItem("user-info")
+            window.location.href = 'admin-login.html'
+        } 
+
+        let CheckCred = () =>{
+            if (!sessionStorage.getItem("user-creds")) {
+                window.location.href = 'admin-login.html'   
+            }else{
+                MsgHead.innerText = `user email: ${UserCreds.email} logged in`
+                GreetHead.innerHTML = `Welcom ${UserInfo.Name}!`
+            }
+        }
+
+        window.addEventListener('load', CheckCred);
+        signoutBtn.addEventListener('click', Signout)
+
+    </script>
 </body>
 
 
