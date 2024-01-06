@@ -11,7 +11,7 @@
 			displayform.addEventListener('click', showForm);
 
 			forlogin.addEventListener('click', (e) => {
-				e.preventDefault;
+				e.preventDefault();
 				forRegister.classList.remove('active');
 				forlogin.classList.add('active');
 				if (loginForm.classList.contains('toggleForm')) {
@@ -23,7 +23,7 @@
 			});
 
 			forRegister.addEventListener('click', (e) => {
-				e.preventDefault;
+				e.preventDefault();
 				forlogin.classList.remove('active');
 				forRegister.classList.add('active');
 				if (registerForm.classList.contains('toggleForm')) {
