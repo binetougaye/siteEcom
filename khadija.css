@@ -47,7 +47,7 @@ nav ul {
 	padding-right: 40px;
 	text-align: right;
 	list-style-type: none;
-	
+
 }
 
 ul li {
@@ -191,3 +191,4 @@ label {
 	visibility: hidden;
 	opacity: 0;
 	transition: opacity 0.3s, visibility 0.3s;
+}
