@@ -45,11 +45,23 @@ function populateTableList() {
 
 function addToCart(index) {
     // Logique pour ajouter le produit au panier en utilisant l'index
-    console.log('Ce produit est ajouté:', products[index]);
+
+    // Simule l'ajout du produit au panier
+    let addedProduct = products[index];
+    // Mettez à jour l'image avec la nouvelle source
+    var imageElement = document.getElementById("imageChanger").innerHTML;
+    imageElement.src = addedProduct.image;
 }
+
+// Exemple d'ut
+    // console.log('Ce produit est ajouté:', products[index]); 
+  
+
+
 
 function deleteProduct(index) {
     // Logique pour supprimer le produit en utilisant l'index
     console.log('Ce produit est supprimé:', products[index]);
 }
+
 
