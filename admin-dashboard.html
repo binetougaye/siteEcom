@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="admin-validation-form.js" defer></script>
+    <link rel="stylesheet" href="admin.css">
+    <title>Admin dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-2 side-bar p-0">
+                <div class="home-image col-2 pb-5" >
+                    <div class="d-flex text-center">
+                        <h1 class="text-center ms-2">Sneakers</h1>
+                    </div>
+                    <div class="image">
+                        <img src="" alt="" />
+                    </div>
+                    <div class="home-text text-center">
+                        <h4 id="msg"></h4>
+                        <h4 id="greet"></h4>
+                        <p><span>Admin</span></p>
+                    </div>
+                </div>
+                <div class="list-group text-start" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">
+                    Acceuil
+                    </a>
+                    <a class="list-group-item list-group-item-action" id="list-categories-list" data-bs-toggle="list" href="#list-categories" role="tab" aria-controls="list-categories">
+                    Ajout Categories
+                    </a>
+                    <a class="list-group-item list-group-item-action" id="list-articles-list" data-bs-toggle="list" href="#list-articles" role="tab" aria-controls="list-articles">
+                        Ajout Articles
+                    </a>
+                    <a class="list-group-item list-group-item-action" id="list-clients-list" data-bs-toggle="list" href="#list-clients" role="tab" aria-controls="list-clients">
+                    Liste Clients
+                    </a>
+                    
+                </div>
+                <button type="button" id="signoutbutton" >Logout</button>
+            </div>
+            <div class="col-10 tabpane p-0">
+                <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade ms-5 show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                    <section id="dashboard">
+                        <div class="row d-flex position-relative">
+                        <div class="card v1">
+                             <div class="head-dash position-absolute top-0 start-1">
+                             <h5>Nombres Clients</h5>
+                             </div>
+                             <div class="footer-dash position-absolute bottom-0 end-0">
+                                 <h3 id="nombre"> </h3>
+                             </div>
+                        </div>
+                        <div class="card v2">
+                             <div class="head-dash position-absolute top-0 start-1">
+                                 <h5>Nombres Articles</h5>
+                             </div>
+                             <div class="footer-dash position-absolute bottom-0 end-0">
+                                 <h3></h3>
+                             </div>
+                        </div>
+                        <div class="card v3">
+                             <div class="head-dash position-absolute top-0 start-1">
+                             <h5>Payments</h5>
+                             </div>
+                             <div class="footer-dash position-absolute bottom-0 end-0">
+                                 <h3></h3>
+                             </div>
+                        </div>
+                        <div class="card v4">
+                             <div class="head-dash position-absolute top-0 start-1">
+                             <h5>Nombres Admin</h5>
+                             </div>
+                             <div class="footer-dash position-absolute bottom-0 end-0">
+                                 <h3 id="users"> </h3>
+                             </div>
+                        </div>
+                        </div>
+                     </section>
+                </div>
+                <div class="tab-pane fade ms-5" id="list-categories" role="tabpanel" aria-labelledby="list-categories-list">
+                    <input type="text" placeholder="Nom de la Categorie" id="new-category">
+                    <button type="button" class="btn btn-primary" id="addToDo">Ajouter
+                        <i class="fa fa-add"></i></h1>
+                      </button>
+                    <div class="catergorie" id="CategorieAdd"></div>
+                </div>
+                <div class="tab-pane fade ms-5" id="list-articles" role="tabpanel" aria-labelledby="list-articles-list">...</div>
+                <div class="tab-pane fade ms-5" id="list-clients" role="tabpanel" aria-labelledby="list-clients-list">...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"))
+        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"))
+
+
+        let MsgHead = document.getElementById("msg")
+        let GreetHead = document.getElementById("greet")
+        let signoutBtn = document.getElementById("signoutbutton")
+
+        let Signout = () =>{
+            sessionStorage.removeItem("user-creds")
+            sessionStorage.removeItem("user-info")
+            window.location.href = 'admin-login.html'
+        } 
+
+        let CheckCred = () =>{
+            if (!sessionStorage.getItem("user-creds")) {
+                window.location.href = 'admin-login.html'   
+            }else{
+                MsgHead.innerText = `user email: ${UserCreds.email} logged in`
+                GreetHead.innerHTML = `Welcom ${UserInfo.Name}!`
+            }
+        }
+
+        window.addEventListener('load', CheckCred);
+        signoutBtn.addEventListener('click', Signout)
+
+    </script>
+</body>
+
+
+<!-- boostrap link -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>

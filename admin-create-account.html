@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="admin-validation-form.js"></script>
+    <title>Admin</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+        <div class="card col-md-5 mx-auto my-5">
+            <div class="head-sign">
+                <div class="ligne d-flex text-center">
+                    <h1 class="text-center ms-3">Sneakers Admin Connexion</h1>
+                </div>
+            </div>
+            <div class="body-sign">
+                <h3 class="text-center mt-5">SIGN UP</h3>
+                <p class="text-center mb-3">Enter your credentials to access your account</p>
+                <form id="MainForm">
+                <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control"  id="name" placeholder="Enter your Name" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control"  id="email" placeholder="Enter your email" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control"  id="password" placeholder="Enter your password" />
+                    </div>
+                    <button type="submit"   >Register</button>
+                    <a href="admin-login.html"><button type="button"  >SIGN IN</button></a>
+                </form>
+                <h6 class="my-3 text-center">Already have an account? <a href="admin-login.html"><span>Sign in</span></a></h6>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        
+        const firebaseConfig = {
+          apiKey: "AIzaSyCyo7of9VPNbQqtBN3VYJL3ZJM-qFyDZKY",
+          authDomain: "validation-javascript.firebaseapp.com",
+          projectId: "validation-javascript",
+          storageBucket: "validation-javascript.appspot.com",
+          messagingSenderId: "944265527624",
+          appId: "1:944265527624:web:0853d33f7d2aa2eadaf37d",
+          measurementId: "G-JCXC8B27KG"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+        const auth = getAuth(app);
+
+
+        let Name = document.getElementById("name")
+        let email = document.getElementById("email")
+        let password = document.getElementById("password")
+        let mainform = document.getElementById("MainForm")
+
+        let RegisterUser = evt =>{
+            evt.preventDefault();
+
+            createUserWithEmailAndPassword(auth, email.value, password.value)
+            .then((credentials)=>{
+                set(ref(db, 'UserAuthList' + credentials.user.uid),{
+                    Name: Name.value
+                });
+            })
+            .catch((error)=>{
+                alert(error.message);
+                console.log(error.code);
+                console.log(error.message);
+            })
+        }
+
+        mainform.addEventListener('submit', RegisterUser);
+    </script>
+</body>
+
+
+<!-- boostrap link -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
