@@ -1,3 +1,4 @@
+
 function Products(photos, nom, tail, prix ) {
     this.photos = photos,
     this.nom = nom,
@@ -6,16 +7,16 @@ function Products(photos, nom, tail, prix ) {
     // this.action = action
 }
 
-const product1 = new Products('./img/base4.jpeg','Jordan','M',20000);
-const product2 = new Products('./img/06ca3e1a-101f-4bc6-b219-a8b64426f096_BG-NANTES-004.webp','Blazer','S',15000);
-const product3 = new Products('./img/b1.jpeg','Castel','L',10000);
-const product4 = new Products('./img/b2.jpeg','Hippie','S',14000);
-const product5 = new Products('./img/b3.jpeg','Star','X',18000);
-const product6 = new Products('./img/b4.jpeg','Force','W',13500);
-const product7 = new Products('./img/base1.jpeg','Kendal','M',24000);
-const product8 = new Products('./img/base2.jpeg','Vost','L',34000);
-const product9 = new Products('./img/base3.jpeg','Best','X',25000);
-const product10 = new Products('./img/robe3.jpeg','Robe','S',35000);
+const product1 = new Products('./img/men1.jpeg','Jordan','M',20000);
+const product2 = new Products('./img/men2.jpeg','Paul','S',15000);
+const product3 = new Products('./img/men3.jpeg','Castel','L',10000);
+const product4 = new Products('./img/men3.jpeg','Hope','S',14000);
+const product5 = new Products('./img/men2.jpeg','Star','X',18000);
+const product6 = new Products('./img/men1.jpeg','Force','W',13500);
+const product7 = new Products('./img/men1.jpeg','Ken','M',24000);
+const product8 = new Products('./img/men2.jpeg','Vost','L',34000);
+const product9 = new Products('./img/men3.jpeg','Best','X',25000);
+const product10 = new Products('./img/men1.jpeg','Cost','S',35000);
 
 let products = [];
 products.push(product1, product2, product3, product4, product5, product6, product7 ,product8,product9,product10);
