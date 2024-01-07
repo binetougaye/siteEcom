@@ -6,9 +6,7 @@ let modalBody = document.querySelector(".modal-body");
 // alert("hello");
 
 let supp = document.getElementById("delete");
-
 //
-
 // HIS CODE
 
 // let btnBuy = document.querySelectorAll(".buyButton");
@@ -195,10 +193,8 @@ for (i = 0; i < clothes.length; i++) {
         for (let i = 0; i < plus.length; i++) {
           plus[i].addEventListener("click", function () {
             // let z = p++;
-            let nbrProduit = p++; // Incrémentation de la variable p et assignation à nbrProduit
-            add[i].innerHTML = shop.innerHTML = p; // Mise à jour des éléments HTML avec la nouvelle valeur de p
-            
-                        if (nbrProduit === 1) {
+            let nbrProduit = (add[i].innerHTML = shop.innerHTML = p++);
+            if (nbrProduit === 1) {
               modalTitle.innerHTML = `Ton panier(${nbrProduit} produit)`;
             } else {
               modalTitle.innerHTML = `Ton panier(${nbrProduit} produits)`;
@@ -216,8 +212,9 @@ for (i = 0; i < clothes.length; i++) {
       }
       increment();
       decrement();
-    } 
-    else if (names.innerText === "Robes") {
+
+
+    } else if (names.innerText === "Robes") {
       text.innerText = "ROBES ET COMBINAISONS POUR FEMME";
       container.innerHTML = `
       <div class="row">
@@ -239,8 +236,7 @@ for (i = 0; i < clothes.length; i++) {
                             <div>
                                 <i class="fa fa-minus" aria-hidden="true"></i>
                             </div>
-                        </button>
-
+                        // </button>
                             </div>
                           </div>
                       </div>
@@ -326,40 +322,75 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      
-      console.log(minus);
-      
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].addEventListener("click", function () {
-            let p = parseInt(add[i].innerHTML);
-            p++;
-            add[i].innerHTML = p;
-            shop.innerHTML = p;
-          });
-        }
+// Initialize the cart items in localStorage
+if (!localStorage.getItem('cart')) {
+  localStorage.setItem('cart', JSON.stringify({}));
+}
+
+function increment() {
+  let plus = document.querySelectorAll(".fa-plus");
+  let add = document.querySelectorAll(".add");
+  let shop = document.querySelector(".panier");
+
+  for (let i = 0; i < plus.length; i++) {
+    plus[i].addEventListener("click", function () {
+      let p = parseInt(add[i].innerText);
+      add[i].innerText = shop.innerText = p + 1;
+
+      // Update localStorage
+      updateLocalStorage(i, p + 1);
+    });
+  }
+}
+
+function decrement() {
+  let minus = document.querySelectorAll(".fa-minus");
+  let add = document.querySelectorAll(".add");
+  let shop = document.querySelector(".panier");
+
+  for (let i = 0; i < minus.length; i++) {
+    minus[i].addEventListener("click", function () {
+      let p = parseInt(add[i].innerText);
+      if (p > 1) {
+        add[i].innerText = shop.innerText = p - 1;
+
+        // Update localStorage
+        updateLocalStorage(i, p - 1);
       }
-      
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            let p = parseInt(add[i].innerHTML);
-            if (p > 0) {
-              p--;
-              add[i].innerHTML = p;
-              shop.innerHTML = p;
-            }
-          });
-        }
-      }
-      
-      increment();
-      decrement();
-          } else if (names.innerText === "Best sellers") {
+    });
+  }
+}
+
+function updateLocalStorage(index, quantity) {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+  let itemName = document.querySelectorAll(".card-body h5")[index].innerText;
+
+  cart[itemName] = quantity;
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Call increment and decrement functions
+increment();
+decrement();
+
+// Function to display the cart items
+function displayCart() {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+
+  // Loop through cart items and update the display
+  for (let itemName in cart) {
+    let index = Array.from(document.querySelectorAll(".card-body h5")).findIndex(item => item.innerText === itemName);
+    let add = document.querySelectorAll(".add")[index];
+    let shop = document.querySelector(".panier");
+
+    add.innerText = shop.innerText = cart[itemName];
+  }
+}
+
+// Call the displayCart function
+displayCart();
+    } else if (names.innerText === "Best sellers") {
       text.innerHTML = "BEST SELLERS";
       container.innerHTML = `
       <div class="row">
@@ -469,29 +500,74 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      console.log(minus);
-      let p = 1;
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p++;
-          });
-        }
-      }
+// Initialize the cart items in localStorage
+if (!localStorage.getItem('cart')) {
+  localStorage.setItem('cart', JSON.stringify({}));
+}
 
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p--;
-          });
-        }
+function increment() {
+  let plus = document.querySelectorAll(".fa-plus");
+  let add = document.querySelectorAll(".add");
+  let shop = document.querySelector(".panier");
+
+  for (let i = 0; i < plus.length; i++) {
+    plus[i].addEventListener("click", function () {
+      let p = parseInt(add[i].innerText);
+      add[i].innerText = shop.innerText = p + 1;
+
+      // Update localStorage
+      updateLocalStorage(i, p + 1);
+    });
+  }
+}
+
+function decrement() {
+  let minus = document.querySelectorAll(".fa-minus");
+  let add = document.querySelectorAll(".add");
+  let shop = document.querySelector(".panier");
+
+  for (let i = 0; i < minus.length; i++) {
+    minus[i].addEventListener("click", function () {
+      let p = parseInt(add[i].innerText);
+      if (p > 1) {
+        add[i].innerText = shop.innerText = p - 1;
+
+        // Update localStorage
+        updateLocalStorage(i, p - 1);
       }
-      increment();
-      decrement();
+    });
+  }
+}
+
+function updateLocalStorage(index, quantity) {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+  let itemName = document.querySelectorAll(".card-body h5")[index].innerText;
+
+  cart[itemName] = quantity;
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Call increment and decrement functions
+increment();
+decrement();
+
+// Function to display the cart items
+function displayCart() {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+
+  // Loop through cart items and update the display
+  for (let itemName in cart) {
+    let index = Array.from(document.querySelectorAll(".card-body h5")).findIndex(item => item.innerText === itemName);
+    let add = document.querySelectorAll(".add")[index];
+    let shop = document.querySelector(".panier");
+
+    add.innerText = shop.innerText = cart[itemName];
+  }
+}
+
+// Call the displayCart function
+displayCart();
     } else if (names.innerText === "Total look") {
       textMiddle.innerHTML = "TOTAL LOOK";
       bgHeader.src = "img/bg.avif";
@@ -605,28 +681,74 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      console.log(minus);
-      let p = 1;
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p++;
-          });
-        }
-      }
+// Initialize the cart items in localStorage
+if (!localStorage.getItem('cart')) {
+  localStorage.setItem('cart', JSON.stringify({}));
+}
 
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p--;
-          });
-        }
+function increment() {
+  let plus = document.querySelectorAll(".fa-plus");
+  let add = document.querySelectorAll(".add");
+  let shop = document.querySelector(".panier");
+
+  for (let i = 0; i < plus.length; i++) {
+    plus[i].addEventListener("click", function () {
+      let p = parseInt(add[i].innerText);
+      add[i].innerText = shop.innerText = p + 1;
+
+      // Update localStorage
+      updateLocalStorage(i, p + 1);
+    });
+  }
+}
+
+function decrement() {
+  let minus = document.querySelectorAll(".fa-minus");
+  let add = document.querySelectorAll(".add");
+  let shop = document.querySelector(".panier");
+
+  for (let i = 0; i < minus.length; i++) {
+    minus[i].addEventListener("click", function () {
+      let p = parseInt(add[i].innerText);
+      if (p > 1) {
+        add[i].innerText = shop.innerText = p - 1;
+
+        // Update localStorage
+        updateLocalStorage(i, p - 1);
       }
-      increment();
+    });
+  }
+}
+
+function updateLocalStorage(index, quantity) {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+  let itemName = document.querySelectorAll(".card-body h5")[index].innerText;
+
+  cart[itemName] = quantity;
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Call increment and decrement functions
+increment();
+decrement();
+
+// Function to display the cart items
+function displayCart() {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+
+  // Loop through cart items and update the display
+  for (let itemName in cart) {
+    let index = Array.from(document.querySelectorAll(".card-body h5")).findIndex(item => item.innerText === itemName);
+    let add = document.querySelectorAll(".add")[index];
+    let shop = document.querySelector(".panier");
+
+    add.innerText = shop.innerText = cart[itemName];
+  }
+}
+
+// Call the displayCart function
+displayCart();
     } else if (names.innerText === "Coat") {
       textMiddle.innerHTML = "COAT TIME";
       bgHeader.src = "img/coatTime.avif";
@@ -740,28 +862,74 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      console.log(minus);
-      let p = 1;
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p++;
-          });
-        }
-      }
+// Initialize the cart items in localStorage
+if (!localStorage.getItem('cart')) {
+  localStorage.setItem('cart', JSON.stringify({}));
+}
 
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p--;
-          });
-        }
+function increment() {
+  let plus = document.querySelectorAll(".fa-plus");
+  let add = document.querySelectorAll(".add");
+  let shop = document.querySelector(".panier");
+
+  for (let i = 0; i < plus.length; i++) {
+    plus[i].addEventListener("click", function () {
+      let p = parseInt(add[i].innerText);
+      add[i].innerText = shop.innerText = p + 1;
+
+      // Update localStorage
+      updateLocalStorage(i, p + 1);
+    });
+  }
+}
+
+function decrement() {
+  let minus = document.querySelectorAll(".fa-minus");
+  let add = document.querySelectorAll(".add");
+  let shop = document.querySelector(".panier");
+
+  for (let i = 0; i < minus.length; i++) {
+    minus[i].addEventListener("click", function () {
+      let p = parseInt(add[i].innerText);
+      if (p > 1) {
+        add[i].innerText = shop.innerText = p - 1;
+
+        // Update localStorage
+        updateLocalStorage(i, p - 1);
       }
-      increment();
+    });
+  }
+}
+
+function updateLocalStorage(index, quantity) {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+  let itemName = document.querySelectorAll(".card-body h5")[index].innerText;
+
+  cart[itemName] = quantity;
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Call increment and decrement functions
+increment();
+decrement();
+
+// Function to display the cart items
+function displayCart() {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+
+  // Loop through cart items and update the display
+  for (let itemName in cart) {
+    let index = Array.from(document.querySelectorAll(".card-body h5")).findIndex(item => item.innerText === itemName);
+    let add = document.querySelectorAll(".add")[index];
+    let shop = document.querySelector(".panier");
+
+    add.innerText = shop.innerText = cart[itemName];
+  }
+}
+
+// Call the displayCart function
+displayCart();
     } else if (names.innerText === "Basiques") {
       textMiddle.innerHTML = "UP-TO-DATE BASICS";
       bgHeader.src = "img/bgBase.avif";
@@ -873,30 +1041,74 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      console.log(minus);
-      let p = 1;
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].addEventListener("click", function () {
-            // let z = p++;
-            add[i].innerHTML = shop.innerHTML = p++;
-          });
-        }
-      }
+// Initialize the cart items in localStorage
+if (!localStorage.getItem('cart')) {
+  localStorage.setItem('cart', JSON.stringify({}));
+}
 
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p--;
-          });
-        }
+function increment() {
+  let plus = document.querySelectorAll(".fa-plus");
+  let add = document.querySelectorAll(".add");
+  let shop = document.querySelector(".panier");
+
+  for (let i = 0; i < plus.length; i++) {
+    plus[i].addEventListener("click", function () {
+      let p = parseInt(add[i].innerText);
+      add[i].innerText = shop.innerText = p + 1;
+
+      // Update localStorage
+      updateLocalStorage(i, p + 1);
+    });
+  }
+}
+
+function decrement() {
+  let minus = document.querySelectorAll(".fa-minus");
+  let add = document.querySelectorAll(".add");
+  let shop = document.querySelector(".panier");
+
+  for (let i = 0; i < minus.length; i++) {
+    minus[i].addEventListener("click", function () {
+      let p = parseInt(add[i].innerText);
+      if (p > 1) {
+        add[i].innerText = shop.innerText = p - 1;
+
+        // Update localStorage
+        updateLocalStorage(i, p - 1);
       }
-      increment();
-      decrement();
+    });
+  }
+}
+
+function updateLocalStorage(index, quantity) {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+  let itemName = document.querySelectorAll(".card-body h5")[index].innerText;
+
+  cart[itemName] = quantity;
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Call increment and decrement functions
+increment();
+decrement();
+
+// Function to display the cart items
+function displayCart() {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+
+  // Loop through cart items and update the display
+  for (let itemName in cart) {
+    let index = Array.from(document.querySelectorAll(".card-body h5")).findIndex(item => item.innerText === itemName);
+    let add = document.querySelectorAll(".add")[index];
+    let shop = document.querySelector(".panier");
+
+    add.innerText = shop.innerText = cart[itemName];
+  }
+}
+
+// Call the displayCart function
+displayCart();
     }
   });
 }
@@ -922,3 +1134,9 @@ function refresh() {
 let img = document.querySelectorAll(".img");
 let Buttons = document.querySelectorAll(".buttons");
 console.log(img);
+
+
+
+
+
+
