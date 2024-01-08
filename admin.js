@@ -13,7 +13,7 @@ let supp = document.getElementById("delete");
 
 // let btnBuy = document.querySelectorAll(".buyButton");
 // Fonction AJOUT dans le Panier
-let clothes = document.querySelectorAll(".clothes");
+let clothes = document.querySelectorAll(".clothes2");
 let span = document.querySelector(".span");
 let product = document.getElementById("cart");
 let buttons = document.querySelectorAll(".buttons");
@@ -70,6 +70,7 @@ let container = document.querySelector(".pro");
 let text = document.querySelector(".text");
 let textMiddle = document.querySelector(".text-middle");
 let lien = document.querySelector("#lien");
+
 console.log(price);
 // console.log(price.innerText);
 for (i = 0; i < clothes.length; i++) {
@@ -78,8 +79,9 @@ for (i = 0; i < clothes.length; i++) {
   let prix = clothes[i];
 
   // console.log(prix.innerText);
-  clothes[i].addEventListener("click", function () {
-    if (names.innerText === "Pulls et cardigans") {
+//   clothes2[i]
+clothes[i].addEventListener("click", function () {
+    if (names.innerText === "Découvrez davantage") {
       text.innerHTML = "PULL-OVERS ET CARDIGANS POUR FEMME";
       container.innerHTML = `
       <div class="row">
@@ -418,7 +420,20 @@ for (i = 0; i < clothes.length; i++) {
 
     let ind = 0;
     let total = document.getElementById("total");
-    nomDuProduit.innerHTML += `<p>Nom du produit: ${names.innerText}</p>`;
+    // nomDuProduit.innerHTML += `<div class="groupage">
+//     <div class="d-flex justify-content-around">
+//     <img src="./img/she_NN_bannerinterior_2912.avif" alt="" class="retouss">
+//     <i class="bi bi-trash3 d-flex align-items-center "></i>
+//     </div>
+//     <div class="d-flex m-2 text-center m-auto justify-content-center align-items-center">
+//     <p class="taille m-2">XXS</p>
+//     <p class="taille m-2">XS</p>
+//     <p class="taille m-2">S</p>
+//     <p class="taille m-2">M</p>
+//     <p class="taille m-2">L</p>
+//     <p class="taille m-2">XL</p>
+// </div>
+// </div>`;
     // prixDuProduit.innerHTML += `<p>Prix du produit : ${prix.innerText}</p>`;
     // let prixTotal = ;
 

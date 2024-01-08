@@ -332,3 +332,14 @@ a {
         padding: 20px;
     }
 }
+.retouss{
+    width: 100px;
+    height: 100px;
+}
+.groupage{
+    display: flex;
+    flex-direction: column;
+}
+.bi-trash3{
+    font-size: 18px;
+}
