@@ -13,6 +13,7 @@ let supp = document.getElementById("delete");
 
 // let btnBuy = document.querySelectorAll(".buyButton");
 // Fonction AJOUT dans le Panier
+// let img = document.querySelectorAll(".img")
 let clothes = document.querySelectorAll(".clothes");
 let span = document.querySelector(".span");
 let product = document.getElementById("cart");
@@ -185,6 +186,8 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
+      let img = document.querySelectorAll("img");
+      console.log(img);
       let plus = document.querySelectorAll(".fa-plus");
       let minus = document.querySelectorAll(".fa-minus");
       let add = document.querySelectorAll(".add");
@@ -193,14 +196,17 @@ for (i = 0; i < clothes.length; i++) {
       let p = 1;
       function increment() {
         for (let i = 0; i < plus.length; i++) {
+          plus[i].id = "id" + p;
           plus[i].addEventListener("click", function () {
-            // let z = p++;
+            console.log(plus[i].id);
             let nbrProduit = (add[i].innerHTML = shop.innerHTML = p++);
-            if (nbrProduit === 1) {
-              modalTitle.innerHTML = `Ton panier(${nbrProduit} produit)`;
-            } else {
-              modalTitle.innerHTML = `Ton panier(${nbrProduit} produits)`;
-            }
+            console.log(nbrProduit);
+            // if (nbrProduit === 1) {
+            //   modalTitle.innerHTML = `Ton panier(${nbrProduit} produit)`;
+            // } else {
+            //   modalTitle.innerHTML = `Ton panier(${nbrProduit} produits)`;
+            // }
+            // p = 1;
           });
         }
       }
