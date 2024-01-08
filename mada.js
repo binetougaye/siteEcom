@@ -213,7 +213,6 @@ for (i = 0; i < clothes.length; i++) {
       increment();
       decrement();
 
-
     } else if (names.innerText === "Robes") {
       text.innerText = "ROBES ET COMBINAISONS POUR FEMME";
       container.innerHTML = `
@@ -322,7 +321,6 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-// Initialize the cart items in localStorage
 if (!localStorage.getItem('cart')) {
   localStorage.setItem('cart', JSON.stringify({}));
 }
@@ -335,9 +333,8 @@ function increment() {
   for (let i = 0; i < plus.length; i++) {
     plus[i].addEventListener("click", function () {
       let p = parseInt(add[i].innerText);
-      add[i].innerText = shop.innerText = p + 1;
+      add[i].innerText = shop.innerText = p++;
 
-      // Update localStorage
       updateLocalStorage(i, p + 1);
     });
   }
@@ -354,7 +351,6 @@ function decrement() {
       if (p > 1) {
         add[i].innerText = shop.innerText = p - 1;
 
-        // Update localStorage
         updateLocalStorage(i, p - 1);
       }
     });
@@ -370,15 +366,12 @@ function updateLocalStorage(index, quantity) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Call increment and decrement functions
 increment();
 decrement();
 
-// Function to display the cart items
 function displayCart() {
   let cart = JSON.parse(localStorage.getItem('cart'));
 
-  // Loop through cart items and update the display
   for (let itemName in cart) {
     let index = Array.from(document.querySelectorAll(".card-body h5")).findIndex(item => item.innerText === itemName);
     let add = document.querySelectorAll(".add")[index];
@@ -388,7 +381,6 @@ function displayCart() {
   }
 }
 
-// Call the displayCart function
 displayCart();
     } else if (names.innerText === "Best sellers") {
       text.innerHTML = "BEST SELLERS";
@@ -500,7 +492,6 @@ displayCart();
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-// Initialize the cart items in localStorage
 if (!localStorage.getItem('cart')) {
   localStorage.setItem('cart', JSON.stringify({}));
 }
@@ -515,7 +506,6 @@ function increment() {
       let p = parseInt(add[i].innerText);
       add[i].innerText = shop.innerText = p + 1;
 
-      // Update localStorage
       updateLocalStorage(i, p + 1);
     });
   }
@@ -532,7 +522,6 @@ function decrement() {
       if (p > 1) {
         add[i].innerText = shop.innerText = p - 1;
 
-        // Update localStorage
         updateLocalStorage(i, p - 1);
       }
     });
@@ -548,15 +537,11 @@ function updateLocalStorage(index, quantity) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Call increment and decrement functions
 increment();
 decrement();
 
-// Function to display the cart items
 function displayCart() {
   let cart = JSON.parse(localStorage.getItem('cart'));
-
-  // Loop through cart items and update the display
   for (let itemName in cart) {
     let index = Array.from(document.querySelectorAll(".card-body h5")).findIndex(item => item.innerText === itemName);
     let add = document.querySelectorAll(".add")[index];
@@ -566,7 +551,6 @@ function displayCart() {
   }
 }
 
-// Call the displayCart function
 displayCart();
     } else if (names.innerText === "Total look") {
       textMiddle.innerHTML = "TOTAL LOOK";
@@ -681,11 +665,9 @@ displayCart();
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-// Initialize the cart items in localStorage
 if (!localStorage.getItem('cart')) {
   localStorage.setItem('cart', JSON.stringify({}));
 }
-
 function increment() {
   let plus = document.querySelectorAll(".fa-plus");
   let add = document.querySelectorAll(".add");
@@ -694,9 +676,7 @@ function increment() {
   for (let i = 0; i < plus.length; i++) {
     plus[i].addEventListener("click", function () {
       let p = parseInt(add[i].innerText);
-      add[i].innerText = shop.innerText = p + 1;
-
-      // Update localStorage
+      add[i].innerText = shop.innerText = p++;
       updateLocalStorage(i, p + 1);
     });
   }
@@ -713,7 +693,6 @@ function decrement() {
       if (p > 1) {
         add[i].innerText = shop.innerText = p - 1;
 
-        // Update localStorage
         updateLocalStorage(i, p - 1);
       }
     });
@@ -729,15 +708,12 @@ function updateLocalStorage(index, quantity) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Call increment and decrement functions
 increment();
 decrement();
 
-// Function to display the cart items
 function displayCart() {
   let cart = JSON.parse(localStorage.getItem('cart'));
 
-  // Loop through cart items and update the display
   for (let itemName in cart) {
     let index = Array.from(document.querySelectorAll(".card-body h5")).findIndex(item => item.innerText === itemName);
     let add = document.querySelectorAll(".add")[index];
@@ -747,7 +723,6 @@ function displayCart() {
   }
 }
 
-// Call the displayCart function
 displayCart();
     } else if (names.innerText === "Coat") {
       textMiddle.innerHTML = "COAT TIME";
@@ -862,7 +837,6 @@ displayCart();
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-// Initialize the cart items in localStorage
 if (!localStorage.getItem('cart')) {
   localStorage.setItem('cart', JSON.stringify({}));
 }
@@ -877,7 +851,6 @@ function increment() {
       let p = parseInt(add[i].innerText);
       add[i].innerText = shop.innerText = p + 1;
 
-      // Update localStorage
       updateLocalStorage(i, p + 1);
     });
   }
@@ -894,7 +867,6 @@ function decrement() {
       if (p > 1) {
         add[i].innerText = shop.innerText = p - 1;
 
-        // Update localStorage
         updateLocalStorage(i, p - 1);
       }
     });
@@ -910,15 +882,12 @@ function updateLocalStorage(index, quantity) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Call increment and decrement functions
 increment();
 decrement();
 
-// Function to display the cart items
 function displayCart() {
   let cart = JSON.parse(localStorage.getItem('cart'));
 
-  // Loop through cart items and update the display
   for (let itemName in cart) {
     let index = Array.from(document.querySelectorAll(".card-body h5")).findIndex(item => item.innerText === itemName);
     let add = document.querySelectorAll(".add")[index];
@@ -928,7 +897,6 @@ function displayCart() {
   }
 }
 
-// Call the displayCart function
 displayCart();
     } else if (names.innerText === "Basiques") {
       textMiddle.innerHTML = "UP-TO-DATE BASICS";
@@ -1041,7 +1009,6 @@ displayCart();
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-// Initialize the cart items in localStorage
 if (!localStorage.getItem('cart')) {
   localStorage.setItem('cart', JSON.stringify({}));
 }
@@ -1056,7 +1023,6 @@ function increment() {
       let p = parseInt(add[i].innerText);
       add[i].innerText = shop.innerText = p + 1;
 
-      // Update localStorage
       updateLocalStorage(i, p + 1);
     });
   }
@@ -1073,7 +1039,6 @@ function decrement() {
       if (p > 1) {
         add[i].innerText = shop.innerText = p - 1;
 
-        // Update localStorage
         updateLocalStorage(i, p - 1);
       }
     });
@@ -1089,15 +1054,12 @@ function updateLocalStorage(index, quantity) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Call increment and decrement functions
 increment();
 decrement();
 
-// Function to display the cart items
 function displayCart() {
   let cart = JSON.parse(localStorage.getItem('cart'));
 
-  // Loop through cart items and update the display
   for (let itemName in cart) {
     let index = Array.from(document.querySelectorAll(".card-body h5")).findIndex(item => item.innerText === itemName);
     let add = document.querySelectorAll(".add")[index];
@@ -1107,7 +1069,6 @@ function displayCart() {
   }
 }
 
-// Call the displayCart function
 displayCart();
     }
   });

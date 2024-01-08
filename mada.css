@@ -247,11 +247,7 @@ a {
 
     .search {
         display: none;
-    }
-    /* .navbar-toggler{
-        width:20px;
-    } */
-    
+    }    
 
     .navBottom {
         flex-wrap: wrap;
