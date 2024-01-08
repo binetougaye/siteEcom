@@ -23,10 +23,10 @@ html {
     position: absolute;
     top: 50%;
     left: 20%;
-    /* text-decoration: underline; */
+    text-decoration: underline;
     text-wrap: nowrap;
     /* text-shadow: 2px 2px #FFF; */
-    /* transform: rotate(350deg); */
+    transform: rotate(350deg);
 }
 
 .clothes2 {
