@@ -3,49 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="admin-validation-form.js"></script>
+    <link rel="stylesheet" href="khadija.css">
     <title>Admin</title>
 </head>
 <body>
     <div class="container">
-        <div class="row">
-        <div class="card col-md-5 mx-auto my-5">
-            <div class="head-sign">
-                <div class="ligne d-flex text-center">
-                    <h1 class="text-center ms-3">Sneakers Admin Connexion</h1>
+<!-- ==========================NAVBAR================================================== -->
+        <nav>
+            <a href="#" class="logo" id="logo">Coding</a>
+            <ul>
+                <li class="nav-item">
+                    <button type="submit" type="button" , role="button" class="btn" id="displayForm">ADMINS_Accès</button>
+                </li>
+            </ul>
+        </nav>
+<!-- ==========================FIN NAVBAR============================================== -->
+
+<!-- ==========================FORMULAIRE SECTION====================================== -->
+        <section>
+            <div class="sec-container">
+                <div class="formWrapper">
+                    <div class="card">
+                        <div class="card-header">
+                            <div id="forLogin" class="form-header active">Se connecter</div>
+                            <div id="forRegister" class="form-header">S'inscrire</div>
+                        </div>
+                        <div class="card-body" id="formContainer">
+
+<!-- =============================FORMULAIRE DE CONNEXION============================== -->
+                            <form action="" id="loginForm">
+                                <input type="email" id="email2" class="form-control" placeholder="Adress mail" />
+                                <input type="password" id="password2" class="form-control" placeholder="Mot de passe" />
+                                <label for="remember">
+                                    <input type="checkbox" class="form-check" id="remember" />
+                                    Se Souvenir de moi
+                                </label>
+                                <button type="submit" class="formButton">Connexion</button>
+                            </form>
+<!-- ==========================FIN FORMULAIRE DE CONNEXION============================== -->
+                          
+<!-- ==============================FORMULAIRE D'INSCRIPTION============================  -->
+                            <form action="" id="registerForm" class="toggleForm">
+                                <input type="text" id="name" class="form-control" placeholder="@Administrateur..." />
+                                <input type="email" id="email" class="form-control" placeholder="Adreass mail..." />
+                                <input type="password" id="password" class="form-control" placeholder="Mot de passe..." />
+                                <label for="remember">
+                                    <input type="checkbox" class="form-check" id="privacy" />
+                                    J'accepte les termes de l'accord
+                                </label>
+                                <button type="submit" id="submitbutton" class="formButton">Inscription</button>
+                            </form>
+<!-- ==========================FIN FORMULAIRE D'INSCRIPTION============================  -->
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="body-sign">
-                <h3 class="text-center mt-5">SIGN UP</h3>
-                <p class="text-center mb-3">Enter your credentials to access your account</p>
-                <form id="MainForm">
-                <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control"  id="name" placeholder="Enter your Name" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control"  id="email" placeholder="Enter your email" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control"  id="password" placeholder="Enter your password" />
-                    </div>
-                    <button type="submit"   >Register</button>
-                    <a href="admin-login.html"><button type="button"  >SIGN IN</button></a>
-                </form>
-                <h6 class="my-3 text-center">Already have an account? <a href="admin-login.html"><span>Sign in</span></a></h6>
-            </div>
-        </div>
-        </div>
+        </section>
+<!-- ==========================FIN FORMULAIRE SECTION=================================== -->
     </div>
 
+<!-- ==========================SCRIPT POUR AUTHENTIFICATION FIREBASE===================  -->
     <script type="module">
-        // Import the functions you need from the SDKs you need
+
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        
+        import { getDatabase, set, ref, get, child } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+       
         const firebaseConfig = {
           apiKey: "AIzaSyCyo7of9VPNbQqtBN3VYJL3ZJM-qFyDZKY",
           authDomain: "validation-javascript.firebaseapp.com",
@@ -59,13 +82,19 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase();
         const auth = getAuth(app);
+        const dbref = ref(db)
+        
 
 
         let Name = document.getElementById("name")
         let email = document.getElementById("email")
+        let email2 = document.getElementById("email2")
         let password = document.getElementById("password")
-        let mainform = document.getElementById("MainForm")
+        let password2 = document.getElementById("password2")
+        let registerForm = document.getElementById("registerForm")
+        let loginForm = document.getElementById("loginForm")
 
+// function pour enregistrer les nouveaux admins
         let RegisterUser = evt =>{
             evt.preventDefault();
 
@@ -80,14 +109,47 @@
                 console.log(error.code);
                 console.log(error.message);
             })
+            // window.alert("Compte créer avec succèes, veuillez cliquer sur Se Connecter pour acceder à votre compte, Merci")
+        }
+        registerForm.addEventListener('submit', RegisterUser);
+
+// function pour la connexion des admins
+
+        let signInUser = evt =>{
+            evt.preventDefault();
+
+            signInWithEmailAndPassword(auth, email.value=email2.value, password.value=password2.value)
+            .then((credentials)=>{
+                get(child(dbref, 'UserAuthList' + credentials.user.uid)).then((snapshot)=>{
+                    if (snapshot.exists) {
+                        sessionStorage.setItem("user-info", JSON.stringify({
+                            Name: snapshot.val().Name
+                        }))
+
+                        sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+                        window.location.href = 'admin-dashboard.html'
+                    }
+                });
+            })
+            .catch((error)=>{
+                alert(error.message);
+                console.log(error.code);
+                console.log(error.message);
+            })
         }
 
-        mainform.addEventListener('submit', RegisterUser);
+        loginForm.addEventListener('submit', signInUser);
+
+        var loadFile = function (event) {
+        var image = document.getElementById("output");
+        image.src = URL.createObjectURL(event.target.files[0]);
+        };
     </script>
+<!-- ==========================FIN SCRIPT POUR AUTHENTIFICATION FIREBASE===============  -->
+<!-- ==========================SCRIPT POUR LE FORMULAIRE PAR KHADIJA===================  -->
+    <script src="khadija.js"></script>
+<!-- ==========================FIN SCRIPT POUR LE FORMULAIRE PAR KHADIJA===============  -->
+
 </body>
 
-
-<!-- boostrap link -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
