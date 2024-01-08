@@ -1,17 +1,9 @@
 // Variables
 let modal = document.querySelector(".modal");
-
+let modalTitle = document.querySelector(".modal-title");
 let panier = document.getElementById("cart");
 let modalBody = document.querySelector(".modal-body");
-// alert("hello");
-
-let supp = document.getElementById("delete");
-
 //
-
-// HIS CODE
-
-// let btnBuy = document.querySelectorAll(".buyButton");
 // Fonction AJOUT dans le Panier
 // let img = document.querySelectorAll(".img")
 let clothes = document.querySelectorAll(".clothes");
@@ -19,52 +11,8 @@ let span = document.querySelector(".span");
 let product = document.getElementById("cart");
 let buttons = document.querySelectorAll(".buttons");
 console.log(buttons);
-let modalTitle = document.querySelector(".modal-title");
-let n = 1;
 let nomDuProduit = document.getElementById("productName");
 let prixDuProduit = document.getElementById("productPrice");
-const tabProduct = [
-  {
-    id: 1,
-    nom: "Doudoune",
-    prix: "200$",
-  },
-  {
-    id: 2,
-    nom: "Pulls et cardigans",
-    prix: "170$",
-  },
-  {
-    id: 3,
-    nom: "Robe",
-    prix: "269$",
-  },
-  {
-    id: 4,
-    nom: "Robe portefeuille",
-    prix: "300$",
-  },
-  {
-    id: 5,
-    nom: "Total look",
-    prix: "350$",
-  },
-  {
-    id: 6,
-    nom: "Trench",
-    prix: "210$",
-  },
-  {
-    id: 7,
-    nom: "Best sellers",
-    prix: "295$",
-  },
-  {
-    id: 8,
-    nom: "Coat",
-    prix: "200$",
-  },
-];
 let price = document.querySelectorAll(".price");
 let bgHeader = document.querySelector(".bgHeader");
 let container = document.querySelector(".pro");
@@ -84,29 +32,22 @@ for (i = 0; i < clothes.length; i++) {
       text.innerHTML = "PULL-OVERS ET CARDIGANS POUR FEMME";
       container.innerHTML = `
       <div class="row">
-  
-                  <div class="col-lg-6">
-                      <div class="card border-0">
-                          <img src="img/pull.jpeg" class="" alt="...">
-                          <div class="card-body d-flex justify-content-between">
-                          <div>
-                          <p>Pull-over Lurex grosse maille</p>
-                          <p>49,99 €</p>
-                          </div>
-                          <div>
-                          <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                          <div>
-                              <i class="fa fa-plus" aria-hidden="true"></i>
-                          </div>
-                          <span class="add ms-3 me-3">Ajouter</span>
-                          <div>
-                              <i class="fa fa-minus" aria-hidden="true"></i>
-                          </div>
-                      </button>
-                      </div>   
-                          </div>
-                      </div>
-                  </div>
+      <div class="col-lg-6">
+        <div class="card border-0">
+            <img src="img/pull.jpeg" class="" alt="...">
+            <div class="card-body d-flex justify-content-between">
+              <div>
+                <p>Pull-over Lurex grosse maille</p>
+                <p>49,99 €</p>
+              </div>
+            <div>
+            <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+              <span class="add ms-3 me-3">Ajouter</span>
+            </button>
+        </div>   
+     </div>                   
+    </div>
+    </div>
 
                   <div class="col-lg-6">
                       <div class="card border-0">
@@ -117,14 +58,10 @@ for (i = 0; i < clothes.length; i++) {
                                 <p>59,99 €</p>
                             </div>
                             <div>
-                            <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                            <div>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </div>
+                            <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                           
                             <span class="add ms-3 me-3">Ajouter</span>
-                            <div>
-                                <i class="fa fa-minus" aria-hidden="true"></i>
-                            </div>
+                           
                         </button>
                             </div>
                           </div>
@@ -143,14 +80,10 @@ for (i = 0; i < clothes.length; i++) {
                         <p>79,99 €</p>
                       </div>
                       <div>
-                      <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                      <div>
-                          <i class="fa fa-plus" aria-hidden="true"></i>
-                      </div>
+                      <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                      
                       <span class="add ms-3 me-3">Ajouter</span>
-                      <div>
-                          <i class="fa fa-minus" aria-hidden="true"></i>
-                      </div>
+                     
                   </button>
                       </div>
                       </div>
@@ -167,14 +100,10 @@ for (i = 0; i < clothes.length; i++) {
                       <p>69,99 €</p>
                       </div>
                       <div>
-                        <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px; ">
-                            <div>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </div>
+                        <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px; ">
+                           
                             <span class="add ms-3 me-3">Ajouter</span>
-                            <div>
-                                <i class="fa fa-minus" aria-hidden="true"></i>
-                            </div>
+                            
                         </button>
                       </div>
                       </div>
@@ -186,40 +115,21 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let img = document.querySelectorAll("img");
-      console.log(img);
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      console.log(minus);
-      let p = 1;
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].id = "id" + p;
-          plus[i].addEventListener("click", function () {
-            console.log(plus[i].id);
-            let nbrProduit = (add[i].innerHTML = shop.innerHTML = p++);
-            console.log(nbrProduit);
-            // if (nbrProduit === 1) {
-            //   modalTitle.innerHTML = `Ton panier(${nbrProduit} produit)`;
-            // } else {
-            //   modalTitle.innerHTML = `Ton panier(${nbrProduit} produits)`;
-            // }
-            // p = 1;
-          });
-        }
+      let button = document.querySelectorAll(".btn");
+      let spanPanier = document.querySelector(".panier");
+      console.log(button);
+      let n = 1;
+      for (i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", function () {
+          let incr = n++;
+          spanPanier.innerHTML = incr;
+          if (incr == 1) {
+            modalTitle.innerHTML = `Ton panier(${incr} produit)`;
+          } else {
+            modalTitle.innerHTML = `Ton panier(${incr} produits)`;
+          }
+        });
       }
-
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p--;
-          });
-        }
-      }
-      increment();
-      decrement();
     } else if (names.innerText === "Robes") {
       text.innerText = "ROBES ET COMBINAISONS POUR FEMME";
       container.innerHTML = `
@@ -234,14 +144,10 @@ for (i = 0; i < clothes.length; i++) {
                               <p>49,99 €</p>
                             </div>
                             <div>
-                            <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                            <div>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </div>
+                            <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                           
                             <span class="add ms-3 me-3">Ajouter</span>
-                            <div>
-                                <i class="fa fa-minus" aria-hidden="true"></i>
-                            </div>
+                           
                         </button>
 
                             </div>
@@ -258,14 +164,10 @@ for (i = 0; i < clothes.length; i++) {
                             <p>39,99 €</p>
                           </div>
                           <div>
-                            <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                <div>
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </div>
+                            <button class="border-0 bg-dark text-white p-1 shadow rounded btn" style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                               
                                 <span class="add ms-3 me-3">Ajouter</span>
-                                <div>
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </div>
+                                
                             </button>
                           </div>  
                           </div>
@@ -284,14 +186,10 @@ for (i = 0; i < clothes.length; i++) {
                       <p>39,99 €</p>
                       </div>
                       <div>
-                        <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                            <div>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </div>
+                        <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                           
                             <span class="add ms-3 me-3">Ajouter</span>
-                            <div>
-                                <i class="fa fa-minus" aria-hidden="true"></i>
-                            </div>
+                           
                         </button>
                       </div>
                       </div>
@@ -310,14 +208,10 @@ for (i = 0; i < clothes.length; i++) {
                             <p>49,99 €</p>
                         </div>
                         <div>
-                            <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                <div>
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </div>
+                            <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                               
                                 <span class="add ms-3 me-3">Ajouter</span>
-                                <div>
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </div>
+                               
                             </button>
                         </div>
                       </div>
@@ -329,29 +223,21 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      console.log(minus);
-      let p = 1;
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p++;
-          });
-        }
+      let button = document.querySelectorAll(".btn");
+      let spanPanier = document.querySelector(".panier");
+      console.log(button);
+      let n = 1;
+      for (i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", function () {
+          let incr = n++;
+          spanPanier.innerHTML = incr;
+          if (incr == 1) {
+            modalTitle.innerHTML = `Ton panier(${incr} produit)`;
+          } else {
+            modalTitle.innerHTML = `Ton panier(${incr} produits)`;
+          }
+        });
       }
-
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p--;
-          });
-        }
-      }
-      increment();
-      decrement();
     } else if (names.innerText === "Best sellers") {
       text.innerHTML = "BEST SELLERS";
       container.innerHTML = `
@@ -366,14 +252,10 @@ for (i = 0; i < clothes.length; i++) {
                                 <p>Prix actuel 199,99€</p>
                             </div>
                             <div>
-                                <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center;  width: 120px;">
-                                    <div>
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </div>
+                                <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center;  width: 120px;">
+                                   
                                     <span class="add ms-3 me-3">Ajouter</span>
-                                    <div>
-                                        <i class="fa fa-minus" aria-hidden="true"></i>
-                                    </div>
+                                   
                                 </button>
                             </div>
                           </div>
@@ -390,14 +272,10 @@ for (i = 0; i < clothes.length; i++) {
                                 <p>119,99 €</p>
                             </div>
                             <div>
-                                <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center;  width: 120px;">
-                                    <div>
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </div>
+                                <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center;  width: 120px;">
+                                    
                                     <span class="add ms-3 me-3">Ajouter</span>
-                                    <div>
-                                        <i class="fa fa-minus" aria-hidden="true"></i>
-                                    </div>
+                                   
                                 </button>
                             </div>
                              
@@ -418,14 +296,10 @@ for (i = 0; i < clothes.length; i++) {
                             <p>69,99 €</p>
                         </div>
                         <div>
-                            <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                <div>
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </div>
+                            <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                               
                                 <span class="add ms-3 me-3">Ajouter</span>
-                                <div>
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </div>
+                                
                             </button>
                         </div>
                       </div>
@@ -443,14 +317,10 @@ for (i = 0; i < clothes.length; i++) {
                             <p>75,99 €</p>
                         </div>
                         <div>
-                            <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                <div>
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </div>
+                            <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                               
                                 <span class="add ms-3 me-3">Ajouter</span>
-                                <div>
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </div>
+                                
                             </button>
                         </div>
                       </div>
@@ -462,29 +332,21 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      console.log(minus);
-      let p = 1;
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p++;
-          });
-        }
+      let button = document.querySelectorAll(".btn");
+      let spanPanier = document.querySelector(".panier");
+      console.log(button);
+      let n = 1;
+      for (i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", function () {
+          let incr = n++;
+          spanPanier.innerHTML = incr;
+          if (incr == 1) {
+            modalTitle.innerHTML = `Ton panier(${incr} produit)`;
+          } else {
+            modalTitle.innerHTML = `Ton panier(${incr} produits)`;
+          }
+        });
       }
-
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p--;
-          });
-        }
-      }
-      increment();
-      decrement();
     } else if (names.innerText === "Total look") {
       textMiddle.innerHTML = "TOTAL LOOK";
       bgHeader.src = "img/bg.avif";
@@ -503,14 +365,10 @@ for (i = 0; i < clothes.length; i++) {
                                 <p>39,99 €</p>
                             </div>
                             <div>
-                                <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                    <div>
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </div>
+                                <button class="border-0 bg-dark text-white p-1 shadow rounded btn" style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                                    
                                     <span class="add ms-3 me-3">Ajouter</span>
-                                    <div>
-                                        <i class="fa fa-minus" aria-hidden="true"></i>
-                                    </div>
+                                    
                                 </button>
                             </div>
                           </div>
@@ -527,14 +385,10 @@ for (i = 0; i < clothes.length; i++) {
                                 <p>49,99 €</p>
                             </div>
                             <div>
-                                <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                    <div>
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </div>
+                                <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                                   
                                     <span class="add ms-3 me-3">Ajouter</span>
-                                    <div>
-                                        <i class="fa fa-minus" aria-hidden="true"></i>
-                                    </div>
+                                    
                                 </button>
                             </div>
                           </div>
@@ -554,14 +408,10 @@ for (i = 0; i < clothes.length; i++) {
                             <p>29,99 €</p>
                         </div>
                         <div>
-                            <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                <div>
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </div>
+                            <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                               
                                 <span class="add ms-3 me-3">Ajouter</span>
-                                <div>
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </div>
+                               
                             </button>
                         </div>
                       </div>
@@ -579,14 +429,10 @@ for (i = 0; i < clothes.length; i++) {
                         <p>29,99 €</p>
                       </div>
                       <div>
-                        <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                            <div>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </div>
+                        <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                           
                             <span class="add ms-3 me-3">Ajouter</span>
-                            <div>
-                                <i class="fa fa-minus" aria-hidden="true"></i>
-                            </div>
+                            
                         </button>
                       </div>
                       </div>
@@ -598,28 +444,21 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      console.log(minus);
-      let p = 1;
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p++;
-          });
-        }
+      let button = document.querySelectorAll(".btn");
+      let spanPanier = document.querySelector(".panier");
+      console.log(button);
+      let n = 1;
+      for (i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", function () {
+          let incr = n++;
+          spanPanier.innerHTML = incr;
+          if (incr == 1) {
+            modalTitle.innerHTML = `Ton panier(${incr} produit)`;
+          } else {
+            modalTitle.innerHTML = `Ton panier(${incr} produits)`;
+          }
+        });
       }
-
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p--;
-          });
-        }
-      }
-      increment();
     } else if (names.innerText === "Coat") {
       textMiddle.innerHTML = "COAT TIME";
       bgHeader.src = "img/coatTime.avif";
@@ -637,14 +476,10 @@ for (i = 0; i < clothes.length; i++) {
                                 <p>179,99 €</p>
                             </div>
                             <div>
-                                <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                    <div>
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </div>
+                                <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                                   
                                     <span class="add ms-3 me-3">Ajouter</span>
-                                    <div>
-                                        <i class="fa fa-minus" aria-hidden="true"></i>
-                                    </div>
+                                    
                                 </button>
                             </div>
                           </div>
@@ -661,14 +496,10 @@ for (i = 0; i < clothes.length; i++) {
                                 <p>119,99 €</p>
                             </div>
                             <div>
-                                <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                    <div>
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </div>
+                                <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                                   
                                     <span class="add ms-3 me-3">Ajouter</span>
-                                    <div>
-                                        <i class="fa fa-minus" aria-hidden="true"></i>
-                                    </div>
+                                    
                                 </button>
                             </div>
                              
@@ -689,14 +520,10 @@ for (i = 0; i < clothes.length; i++) {
                             <p>119,99 €</p>
                         </div>
                         <div>
-                            <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                <div>
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </div>
+                            <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                               
                                 <span class="add ms-3 me-3">Ajouter</span>
-                                <div>
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </div>
+                               
                             </button>
                         </div>
                       </div>
@@ -714,14 +541,10 @@ for (i = 0; i < clothes.length; i++) {
                         <p>149,99 €</p>
                       </div>
                       <div>
-                         <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                            <div>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </div>
+                         <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                           
                             <span class="add ms-3 me-3">Ajouter</span>
-                            <div>
-                                <i class="fa fa-minus" aria-hidden="true"></i>
-                            </div>
+                            
                         </button>
                       </div>
                       </div>
@@ -733,28 +556,21 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      console.log(minus);
-      let p = 1;
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p++;
-          });
-        }
+      let button = document.querySelectorAll(".btn");
+      let spanPanier = document.querySelector(".panier");
+      console.log(button);
+      let n = 1;
+      for (i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", function () {
+          let incr = n++;
+          spanPanier.innerHTML = incr;
+          if (incr == 1) {
+            modalTitle.innerHTML = `Ton panier(${incr} produit)`;
+          } else {
+            modalTitle.innerHTML = `Ton panier(${incr} produits)`;
+          }
+        });
       }
-
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p--;
-          });
-        }
-      }
-      increment();
     } else if (names.innerText === "Basiques") {
       textMiddle.innerHTML = "UP-TO-DATE BASICS";
       bgHeader.src = "img/bgBase.avif";
@@ -772,14 +588,10 @@ for (i = 0; i < clothes.length; i++) {
                                 <p>179,99 €</p>
                             </div>
                             <div>
-                                <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                    <div>
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </div>
+                                <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                                   
                                     <span class="add ms-3 me-3">Ajouter</span>
-                                    <div>
-                                        <i class="fa fa-minus" aria-hidden="true"></i>
-                                    </div>
+                                    
                                 </button>
                             </div>
                           </div>
@@ -796,14 +608,10 @@ for (i = 0; i < clothes.length; i++) {
                             <p>119,99 €</p>
                           </div>
                           <div>
-                            <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                                <div>
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </div>
+                            <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                               
                                 <span class="add ms-3 me-3">Ajouter</span>
-                                <div>
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </div>
+                               
                             </button>
                           </div>
                              
@@ -824,14 +632,10 @@ for (i = 0; i < clothes.length; i++) {
                         <p>149,99 €</p>
                       </div>
                       <div>
-                      <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                      <div>
-                          <i class="fa fa-plus" aria-hidden="true"></i>
-                      </div>
+                      <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                     
                       <span class="add ms-3 me-3">Ajouter</span>
-                      <div>
-                          <i class="fa fa-minus" aria-hidden="true"></i>
-                      </div>
+                      
                   </button>
                       </div>
                       </div>
@@ -848,14 +652,10 @@ for (i = 0; i < clothes.length; i++) {
                         <p>79,99 €</p>
                       </div>
                       <div>
-                        <button class="border-0 bg-dark text-white p-1 shadow rounded" id="test" style="display: flex; justify-content: center; align-items: center; width: 120px;">
-                            <div>
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </div>
+                        <button class="border-0 bg-dark text-white p-1 shadow rounded btn"  style="display: flex; justify-content: center; align-items: center; width: 120px;">
+                            
                             <span class="add ms-3 me-3">Ajouter</span>
-                            <div>
-                                <i class="fa fa-minus" aria-hidden="true"></i>
-                            </div>
+                           
                         </button>
                       </div>
                       </div>
@@ -866,47 +666,24 @@ for (i = 0; i < clothes.length; i++) {
           <button  onclick="refresh()" class="border-0 text-white p-1 rounded shadow back" style="background-color:#000;width:150px;">Back</button>
           </div>
       `;
-      let plus = document.querySelectorAll(".fa-plus");
-      let minus = document.querySelectorAll(".fa-minus");
-      let add = document.querySelectorAll(".add");
-      let shop = document.querySelector(".panier");
-      console.log(minus);
-      let p = 1;
-      function increment() {
-        for (let i = 0; i < plus.length; i++) {
-          plus[i].addEventListener("click", function () {
-            // let z = p++;
-            add[i].innerHTML = shop.innerHTML = p++;
-          });
-        }
+      let button = document.querySelectorAll(".btn");
+      let spanPanier = document.querySelector(".panier");
+      console.log(button);
+      let n = 1;
+      for (i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", function () {
+          let incr = n++;
+          spanPanier.innerHTML = incr;
+          if (incr == 1) {
+            modalTitle.innerHTML = `Ton panier(${incr} produit)`;
+          } else {
+            modalTitle.innerHTML = `Ton panier(${incr} produits)`;
+          }
+        });
       }
-
-      function decrement() {
-        for (let i = 0; i < minus.length; i++) {
-          minus[i].addEventListener("click", function () {
-            add[i].innerHTML = shop.innerHTML = p--;
-          });
-        }
-      }
-      increment();
-      decrement();
     }
   });
 }
-
-// let inc = document.querySelectorAll(".inc");
-// let dec = document.querySelectorAll(".dec");
-// let span = document.querySelectorAll(".span");
-// let p = 1;
-
-// FUNCTION AJOUT DANS LE PANIER
-
-// FUNCTION DIMINUER DANS LE PANIER
-// function diminue() {
-//   let incr = p--;
-//   add.innerHTML = incr;
-//   shop.innerHTML = incr;
-// }
 // FUNCTION BACK
 function refresh() {
   location.reload();
