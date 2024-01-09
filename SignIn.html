@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Authentification.css">
+    <title>SignIn Page</title>
+</head>
+
+<body>
+<!-- ===============================FORMILAIRE D'INSCRIPTION================================= -->
+<div class="container">
+    <div class="row col-md-5 mx-auto mt-5">
+        <form action="" id="registerForm">
+            <div class="text-head">
+                <h3 class="mb-3">Créer un compte</h3>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="firstname" placeholder=".........">
+                <label for="firstname">Your Firstname</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="lastname" placeholder=".........">
+                <label for="lastname">Your Lastname</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" placeholder=".........">
+                <label for="email">Your Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <label for="password">Your Password</label>
+                <span> Les mots de passe doivent au moins avoir 6 caractères.</span>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mx-auto mb-3">Submit</button>
+
+
+            <p>
+                En créant un compte, vous acceptez les <a href="/">conditions d'utilisation et de vente</a> de belle gueule.
+                Consultez notre <a href="/">déclaration de confidentialité</a>, <a href="/">notre politique relative aux cookies</a>
+                ainsi que notre <a href="/">politique relative aux publicités ciblées par centres d’intérêts</a>.
+            </p>
+            <hr>
+            <p>Vous possédez déjà un compte ? <a href="LogIn.html">Identifiez-vous</a></p>
+        </form>
+    </div>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getDatabase, set, ref, get, child } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+       
+        const firebaseConfig = {
+          apiKey: "AIzaSyCyo7of9VPNbQqtBN3VYJL3ZJM-qFyDZKY",
+          authDomain: "validation-javascript.firebaseapp.com",
+          projectId: "validation-javascript",
+          storageBucket: "validation-javascript.appspot.com",
+          messagingSenderId: "944265527624",
+          appId: "1:944265527624:web:0853d33f7d2aa2eadaf37d",
+          measurementId: "G-JCXC8B27KG"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+        const auth = getAuth(app);
+        
+
+        let Name = document.getElementById("firstname")
+        let lastname = document.getElementById("lastname")
+        let email = document.getElementById("email")
+        let password = document.getElementById("password")
+        let registerForm = document.getElementById("registerForm")
+
+// function pour enregistrer les nouveaux admins
+        let RegisterUser = evt =>{
+            evt.preventDefault();
+
+            createUserWithEmailAndPassword(auth, email.value, password.value)
+            .then((credentials)=>{
+                set(ref(db, 'UserAuthList' + credentials.user.uid),{
+                    Name: Name.value,
+                    lastname: lastname.value
+                });
+            })
+            .catch((error)=>{
+                alert(error.message);
+                console.log(error.code);
+                console.log(error.message);
+            })
+            window.alert("Compte créer avec succèes, Merci")
+            window.location.href = 'logIn.html'
+        }
+        registerForm.addEventListener('submit', RegisterUser);
+</script>
+
+  <!-- BOOTSATRAP LINK  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
